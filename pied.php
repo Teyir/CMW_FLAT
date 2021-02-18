@@ -8,7 +8,7 @@ $_Theme_ = $_Theme_->GetTableau();
 
             <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
                 <?php if(isset($_Theme_['Pied']['about']) && !empty(trim($_Theme_['Pied']['about']))) : ?>
-                <h4>À propos</h4>
+                    <h4>À propos</h4>
                     <p><?= $_Theme_['Pied']['about']; ?></p>
                 <?php endif; ?>
                 <div class="footer-logo">
@@ -17,12 +17,11 @@ $_Theme_ = $_Theme_->GetTableau();
             </div>
 
             <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-                <h4>Contact Info</h4>
+                <h4>Si tu as une idée hésite pas</h4>
                 <div class="footer-address">
-                    <p>Address :Your address goes
-                        here, your demo address.</p>
-                    <span>Phone : +8880 44338899</span>
-                    <span>Email : info@colorlib.com</span>
+
+                    <span>1</span>
+                    <span>2</span>
                 </div>
             </div>
 
@@ -45,15 +44,12 @@ $_Theme_ = $_Theme_->GetTableau();
             </div>
         </div>
         <div class="footer-bottom row align-items-center text-center text-lg-left no-gutters">
-            <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-            <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-                <a href="#"><i class="ti-facebook"></i></a>
-                <a href="#"><i class="ti-twitter-alt"></i></a>
-                <a href="#"><i class="ti-dribbble"></i></a>
-                <a href="#"><i class="ti-linkedin"></i></a>
-            </div>
+            <p class="footer-text m-0 col-lg-8 col-md-12">
+                © Tous droits réservés <strong><?= $_Serveur_['General']['name']; ?></strong> </p>
+            <p>
+                Thème créé with <i class="fa fa-heart" aria-hidden="true" style="color: #d61d4c"></i> par <a href="https://teyir.fr" target="_blank">Teyir </a> pour <small><a href="https://craftmywebsite.fr" target="_blank">CraftMyWebsite.fr</a>#<?= $versioncms; ?></small>
+            </p>
+
         </div>
     </div>
 </footer>

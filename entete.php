@@ -91,7 +91,7 @@
                                         <div class="dropdown-divider"></div>
                                     <?php endif; ?>
 
-                                    <a class="dropdown-item" href="?page=profil&profil=<?= $_Joueur_['pseudo']; ?>"><i class="fas fa-user"></i> Mon profil</a>
+                                    <a class="dropdown-item" style="color: var(--base-color)" href="?page=profil&profil=<?= $_Joueur_['pseudo']; ?>"><i class="fas fa-user"></i> Mon profil</a>
                                     <div class="dropdown-divider"></div>
 
                                     <?php if (Permission::getInstance()->verifPerm('PermsForum', 'moderation', 'seeSignalement')) :
@@ -100,9 +100,9 @@
                                         <!-- Signalements -->
                                         <a href="?page=signalement" class="dropdown-item text-warning"><i class="fa fa-bell"></i> Signalement <span class="badge badge-pill badge-warning" id="signalement"><?= $signalement ?></span></a>
                                     <?php endif; ?>
-                                    <a class="dropdown-item" href="?page=alert"><i class="fa fa-bell"></i> Alertes : <span class="badge badge-pill badge-primary" id="alerts"><?= $alerte; ?></span></a>
+                                    <a class="dropdown-item txt-dropdown-profil" style="color: var(--base-color)" href="?page=alert" ><i class="fa fa-bell"></i> Alertes : <span class="badge badge-pill badge-primary" id="alerts"><?= $alerte; ?></span></a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="?page=token"></i> Mon solde : <?php if (isset($_Joueur_['tokens'])) echo $_Joueur_['tokens']; ?> <i class="fas fa-gem"></i></a>
+                                    <a class="dropdown-item" href="?page=token" style="color: var(--base-color)"></i> Mon solde : <?php if (isset($_Joueur_['tokens'])) echo $_Joueur_['tokens']; ?> <i class="fas fa-gem"></i></a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item text-danger" href="?action=deco"><i class="fas fa-sign-out-alt"></i> Se déconnecter</a>
 

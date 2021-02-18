@@ -4,13 +4,14 @@ Main:
         couleurs:
             main-color-bg: '#ffffff'
             secondary-color-bg: '#3a50a1'
-            base-color: '#f0f0f0'
-            main-color: '#855fec'
+            base-color: '#c2c2c2'
+            main-color: '#4ad1e3'
             active-color: '#c772e4'
-            lightest: '#0a0a0a'
+            lightest: '#000000'
             darkest: '#3f3f3f'
             bonus1: '#009ffd'
             bonus2: '#06d6a0'
+            txtnav: '#ffffff'
         informations:
             img1: https://images.sky-dream.fr/upload-img-site/tokens-16000.png
             titre1: Achetez mes tokens!

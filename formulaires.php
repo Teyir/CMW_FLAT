@@ -90,9 +90,11 @@
 
                         <div class="col-md-12 mt-3">
                             <div class="col-md-12 d-none" id="progress">
+
                                 <div class="progress">
                                     <div class="progress-bar" id="progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
+
                             </div>
                         </div>
 

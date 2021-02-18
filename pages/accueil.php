@@ -30,7 +30,7 @@ $DiscordOnline = $obj->presence_count;
                 </div>
 
 
-                <div class="col" style="margin-left: 85px;">
+                <div class="col" >
                     <div class="banner_content">
                         <h3><?= $_Serveur_['General']['name']; ?></h3>
                         <hr/>
@@ -72,7 +72,7 @@ $DiscordOnline = $obj->presence_count;
         <div class="row">
             <!-- INFO 1 -->
             <div class="col-md-6 col-lg-4">
-                <div class="single-service" data-aos="fade-up" data-aos-delay="150">
+                <div class="single-service  text-center" data-aos="fade-up" data-aos-delay="150">
                     <div class="service-icon" style=" background: url('<?= $_Theme_['Main']['theme']['informations']['img1'] ?>'); background-position: center center; background-repeat: no-repeat">
 
                     </div>
@@ -85,7 +85,7 @@ $DiscordOnline = $obj->presence_count;
 
             <!-- INFO 2 -->
             <div class="col-md-6 col-lg-4">
-                <div class="single-service" data-aos="fade-up">
+                <div class="single-service text-center" data-aos="fade-up">
                     <div class="service-icon" style=" background: url('<?= $_Theme_['Main']['theme']['informations']['img2'] ?>'); background-position: center center; background-repeat: no-repeat">
 
                     </div>
@@ -99,7 +99,7 @@ $DiscordOnline = $obj->presence_count;
 
             <!-- INFO 3 -->
             <div class="col-md-6 col-lg-4">
-                <div class="single-service" data-aos="fade-up" data-aos-delay="250">
+                <div class="single-service text-center" data-aos="fade-up" data-aos-delay="250">
                     <div class="service-icon" style=" background: url('<?= $_Theme_['Main']['theme']['informations']['img3'] ?>'); background-position: center center; background-repeat: no-repeat">
 
                     </div>

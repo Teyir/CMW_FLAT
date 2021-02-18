@@ -24,6 +24,8 @@ $_Theme_ = $configTheme->GetTableau();
             --darkest: <?= $_Theme_["Main"]['theme']['couleurs']["darkest"] ?> !important;
             --lightest: <?= $_Theme_["Main"]['theme']['couleurs']["lightest"] ?> !important;
 
+            --txtnav: <?= $_Theme_["Main"]['theme']['couleurs']["txtnav"] ?> !important;
+
             --police: <?= $_Theme_["Main"]['theme']['police'] ?> !important;
 
             --logoh: <?= $_Theme_["Main"]['theme']['logo-h'] ?> !important;
@@ -37,6 +39,7 @@ $_Theme_ = $configTheme->GetTableau();
 
             --couleurtitre3: <?= $_Theme_["Main"]['theme']['informations']['couleurtitre3'] ?> !important;
             --couleurdesc3: <?= $_Theme_["Main"]['theme']['informations']['couleurdesc3'] ?> !important;
+
 
 
 

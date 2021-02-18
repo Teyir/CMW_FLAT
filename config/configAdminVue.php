@@ -90,6 +90,7 @@
                                                     <th>Fond foncé</th>
                                                     <th>Bonus 1</th>
                                                     <th>Bonus 2</th>
+                                                    <th>Couleur texte navbar</th>
                                                     </thead>
                                                     <tbody>
                                                     <tr>
@@ -130,6 +131,10 @@
 
                                                         <td class="text-center">
                                                             <input type="color" id="selColor" name="bonus2" value="<?php echo $_Theme_['Main']['theme']['couleurs']['bonus2']; ?>">
+                                                        </td>
+
+                                                        <td class="text-center">
+                                                            <input type="color" id="selColor" name="txtnav" value="<?php echo $_Theme_['Main']['theme']['couleurs']['txtnav']; ?>">
                                                         </td>
 
 
@@ -193,6 +198,12 @@
 
                                                         <td class="text-center p-0">
                                                             <div style="background-color: <?php echo $_Theme_['Main']['theme']['couleurs']['bonus2']; ?>; width: 100%; padding: 0.75rem">
+                                                                &nbsp;
+                                                            </div>
+                                                        </td>
+
+                                                        <td class="text-center p-0">
+                                                            <div style="background-color: <?php echo $_Theme_['Main']['theme']['couleurs']['txtnav']; ?>; width: 100%; padding: 0.75rem">
                                                                 &nbsp;
                                                             </div>
                                                         </td>

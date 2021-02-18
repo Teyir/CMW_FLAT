@@ -1,3 +1,50 @@
+
+
+
+/* RESPONSIVE 17/02 */
+
+@media (max-width: 450px){
+    .svg-wrapper{
+        margin-top: 12px;
+        text-align: center;
+    }
+
+    .single-service{
+        align-content: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width:1619px){
 
     .header_area .navbar .search {

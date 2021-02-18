@@ -55,6 +55,8 @@
     --darkest: #c8c8c8;
     --lightest: #69a6e7;
 
+    --txtnav: #ffffff;
+
     --header-image: url(../img/wallpaper.png);
 
     --couleurtitre1: black;
@@ -133,6 +135,8 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-family: var(--police);
+
+    overflow-x: hidden;
 }
 /*
 Table of Content:
@@ -190,6 +194,340 @@ h1, h2, h3, h4, h5, h6 {
 .info_desc{
     color: var(--main-color);
 }
+
+#Banlist{
+    margin-top: 80px;
+}
+
+.banlist_container{
+    margin-bottom: 170px;
+}
+
+#Chat{
+    margin-bottom: 25px;
+}
+
+#Shop{
+    margin-top: 80px;
+    margin-bottom: 35px;
+}
+.btn_shop{
+    font-size: small;
+}
+
+#support{
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.support_txt:hover{
+    color: var(--main-color);
+    font-size: 98%;
+}
+
+#Members{
+    margin-top: 25px;
+}
+
+#Panier{
+    margin-top: 30px;
+}
+
+.panier_desc img{
+    display: none;
+}
+
+
+
+.hoverText {
+    position: absolute;
+    top: 0;
+    transition: .5s ease;
+    opacity: 0;
+    width: 128px;
+    text-align: center;
+}
+
+
+.card-container:hover .hoverText {
+    opacity: 1;
+}
+
+
+
+.profile-image {
+    width: 125px;
+    height: 125px;
+    display: inline-block;
+    vertical-align: top;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    opacity: 1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#Profil{
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+
+.blockquote-wrapper {
+    display: flex;
+    padding: 0 20px;
+}
+
+.service-icon{
+    margin: 0 auto 0;
+}
+
+/* Blockquote main style */
+.blockquote {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--secondary-color-bg);
+    padding: 30px 0;
+    width: 100%;
+    max-width: 80%;
+    z-index: 1;
+    margin: 80px auto;
+    align-self: center;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+}
+
+/* Blockquote header */
+.blockquote h1 {
+    position: relative;
+    color: var(--main-color);
+    line-height: 1;
+    margin: 0;
+}
+
+/* Blockquote right double quotes */
+.blockquote:after {
+    position: absolute;
+    content: "”";
+    color: #4a4a4a;
+    font-size: 10rem;
+    line-height: 0;
+    bottom: -43px;
+    right: 30px;
+}
+
+/* increase header size after 600px */
+@media all and (min-width: 600px) {
+    .blockquote h1 {
+        font-size: 60px;
+    }
+
+}
+
+/* Blockquote subheader */
+.blockquote h4 {
+    position: relative;
+    color: #292a2b;
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    padding-top: 20px;
+    z-index: 1;
+}
+
+
+
+.mdp-confirm-form{
+    background: none;
+    border: none;
+}
+
+
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: 10px;
+    z-index: 2;
+}
+
+
+
+
+progress {
+    height: 20px;
+    background: #333;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 30px;
+    overflow: visible
+}
+
+.progress .progress-bar {
+    position: relative;
+    -webkit-animation: animate-positive 2s;
+    animation: animate-positive 2s
+}
+
+.progress .progress-value {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    position: absolute;
+    top: -30px;
+    right: -25px
+}
+
+.progress .progress-bar:after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    background: #fff;
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    right: -5px;
+    z-index: 1;
+    transform: rotate(35deg)
+}
+
+.img-modal {
+    display: none;
+    position: fixed;
+    z-index: 1072;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+
+#vote{
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+
+.vote_title:hover{
+    color: var(--main-color);
+    text-shadow: black 1px 0 1px;
+
+}
+
+#Signalement{
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+#Post{
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+#Forum{
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+#ForumCategorie{
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--main-color-bg);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bonus1-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bonus2-color);
+}
+
+/* --- --- FORUM --- --- */
+
+.style1 {
+    background-image: url(../img/etoile-anime.gif);
+}
+
+.style2 {
+    background-image: url(../img/spark-gold.gif);
+}
+
+.style3 {
+    background-image: url(../img/lightning-blue.gif);
+}
+
+.style4 {
+    background-image: url('../img/bubble.gif');
+    background-position: center;
+}
+
+.style5 {
+    background-image: url('../img/explosion.gif');
+    background-repeat: no-repeat;
+}
+
+.style6 {
+    background-image: url('../img/fire.gif');
+    background-position: center;
+}
+
+.style7 {
+    background-image: url('../img/hearts.gif');
+    background-position: center;
+}
+
+.style8{
+    background-image: url("../img/golden-apple.gif");
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.style9{
+    background-image: url("../img/diamond-sword.gif");
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.style10 {
+    background-image: url("../img/diamond.gif");
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.style11 {
+    background-image: url("../img/coins.gif");
+}
+
+
+
+
+
+.caption {
+    background-color: rgba(226, 221, 221, .85);
+    max-width: 128px;
+    min-height: 128px;
+    font-size: 30px;
+    padding-top: 52px;
+    color: white;
+    cursor: pointer;
+}
+
+
 
 
 button:focus {
@@ -257,7 +595,7 @@ ul {
     border: 0px;
     border-radius: 0px; }
 .header_area .navbar .logo_h {
-    color: var(--base-color);
+    color: var(--txtnav);
     height: 80px;
     text-align: center;
     line-height: 69px;
@@ -271,7 +609,7 @@ ul {
 .header_area .navbar .nav .nav-item .nav-link {
     font: 400 12px/80px var(--police);
     text-transform: capitalize;
-    color: var(--base-color);
+    color: var(--txtnav);
     padding: 0px;
     display: inline-block;
     font-size: 14px; }
@@ -287,7 +625,7 @@ ul {
     border-radius: 0px;
     box-shadow: none;
     margin: 0px;
-    background: var(--base-color);
+    background: var(--main-color-bg);
     box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1); }
 @media (min-width: 992px) {
     .header_area .navbar .nav .nav-item.submenu ul {
@@ -334,7 +672,7 @@ ul {
     border-bottom: none; }
 .header_area .navbar .nav .nav-item.submenu ul .nav-item:hover .nav-link {
     background: var(--main-color);
-    color: var(--base-color); }
+    color: var(--txtnav); }
 @media (min-width: 992px) {
     .header_area .navbar .nav .nav-item.submenu:hover ul {
         visibility: visible;
@@ -369,7 +707,7 @@ ul {
     margin-left: 68px;
     font-size: 16px; }
 .right-button ul li a {
-    color: var(--base-color); }
+    color: var(--txtnav); }
 .right-button .shop-icon {
     position: relative; }
 .right-button .shop-icon span {
@@ -378,7 +716,7 @@ ul {
     right: -10px;
     top: -4px;
     border-radius: 50px;
-    color: var(--base-color);
+    color: var(--txtnav);
     width: 15px;
     height: 15px;
     font-size: 10px;
@@ -641,6 +979,38 @@ hr{
 
 
 
+.header_banner{
+    position: relative;
+    z-index: 1;
+    min-height: 120px;
+}
+
+.header_banner .banner_inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 120px; }
+.header_banner .banner_inner .overlay {
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    bottom: 0;
+    z-index: -1; }
+.header_banner .banner_inner .banner_content {
+    color: var(--base-color); }
+.header_banner .banner_inner .banner_content h3 {
+    font-size: 50px;
+    font-family: var(--police);
+    font-weight: 600;
+    margin-bottom: 30px; }
+.header_banner .banner_inner .banner_content p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 27px;
+    margin-bottom: 50px; }
 
 
 
@@ -695,7 +1065,7 @@ hr{
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 100%;
+    width: 110%;
     z-index: -1; }
 .blog_banner .banner_inner .blog_b_text {
     max-width: 700px;
