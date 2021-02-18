@@ -2,10 +2,10 @@
 Main:
     theme:
         couleurs:
-            main-color-bg: '#ffffff'
-            secondary-color-bg: '#3a50a1'
-            base-color: '#c2c2c2'
-            main-color: '#4ad1e3'
+            main-color-bg: '#e6e6e6'
+            secondary-color-bg: '#43b9f4'
+            base-color: '#d6d6d6'
+            main-color: '#3805f0'
             active-color: '#c772e4'
             lightest: '#000000'
             darkest: '#3f3f3f'
@@ -16,18 +16,21 @@ Main:
             img1: https://images.sky-dream.fr/upload-img-site/tokens-16000.png
             titre1: Achetez mes tokens!
             desc1: Achetez mes beaux tokens....
-            couleurtitre1: '#4a4a4a'
-            couleurdesc1: '#6a4848'
+            couleurtitre1: '#fbe527'
+            couleurdesc1: '#878786'
+            couleurback1: '#c4c4c4'
             img2: 'https://images.sky-dream.fr/upload-img-site/Espada%20Madera.png'
             titre2: Achète un kevin
             desc2: Il est bo mon kevin....
-            couleurtitre2: '#000000'
-            couleurdesc2: '#6c7df9'
+            couleurtitre2: '#41c9cb'
+            couleurdesc2: '#878786'
+            couleurback2: '#c4c4c4'
             img3: https://images.sky-dream.fr/upload-img-site/vote.png
             titre3: Oui nous avons des votes
             desc3: Vote et gagne des choses cool (askip)
             couleurtitre3: '#695d6f'
-            couleurdesc3: '#2f985c'
+            couleurdesc3: '#878786'
+            couleurback3: '#c4c4c4'
         police: "'Poppins', sans-serif;"
         logo: 'https://images.sky-dream.fr/upload-img-gfx/SKYDREAM%20TRASNPARENT.png'
         logo-l: 350px
@@ -35,17 +38,5 @@ Main:
         discord-id: "685431569472946197"
         discord-invitation: https://discord.gg/2dwkBYP5Gr
 Pied:
-    about: Bienvenue sur mon site !fssffsfs22559
-    social:
-        - 
-            icon: "<i class='fab fa-discord'></i>"
-            link: https://www.discord.com/
-            message: Rejoignez-nous sur Discord !
-        - 
-            icon: "<i class='fab fa-youtube'></i>"
-            link: https://www.youtube.com/
-            message: Rejoignez-nous sur Youtube !
-        - 
-            icon: "<i class='fab fa-twitter'></i>"
-            link: https://www.twitter.com/
-            message: Rejoignez-nous sur Twitter !
+    couleurbg: '#383838'
+    about: sqfqsffsfqsfqsfq

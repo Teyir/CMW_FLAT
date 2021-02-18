@@ -1,7 +1,7 @@
 
 
 
-/* RESPONSIVE 17/02 */
+/* RESPONSIVE 17/02 + 18/02 */
 
 @media (max-width: 450px){
     .svg-wrapper{
@@ -25,32 +25,10 @@
         height: 250px;
         width: 115px;
     }
+    .tooltip{
+        top:-120%;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -10,7 +10,10 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 
 
 	$ecritureTheme['Pied']['about'] = nl2br(htmlspecialchars($_POST['about']));
-	$ecritureTheme['Pied']['social'] = json_decode($_POST['jsonReseau'], true);
+
+
+	$ecritureTheme['Pied']['couleurbg'] = $_POST['couleurfooterbg'];
+
 
 	$ecriture = new Ecrire('theme/'.$_Serveur_['General']['theme'].'/config/config.yml', $ecritureTheme);
 
@@ -69,25 +72,26 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 	$ecritureTheme['Main']['theme']['informations']['desc1'] = $_POST['desc1'];
 	$ecritureTheme['Main']['theme']['informations']['couleurtitre1'] = $_POST['couleurtitre1'];
 	$ecritureTheme['Main']['theme']['informations']['couleurdesc1'] = $_POST['couleurdesc1'];
+	$ecritureTheme['Main']['theme']['informations']['couleurback1'] = $_POST['couleurback1'];
 
 	$ecritureTheme['Main']['theme']['informations']['img2'] = $_POST['img2'];
 	$ecritureTheme['Main']['theme']['informations']['titre2'] = $_POST['titre2'];
 	$ecritureTheme['Main']['theme']['informations']['desc2'] = $_POST['desc2'];
 	$ecritureTheme['Main']['theme']['informations']['couleurtitre2'] = $_POST['couleurtitre2'];
 	$ecritureTheme['Main']['theme']['informations']['couleurdesc2'] = $_POST['couleurdesc2'];
+	$ecritureTheme['Main']['theme']['informations']['couleurback2'] = $_POST['couleurback2'];
 
 	$ecritureTheme['Main']['theme']['informations']['img3'] = $_POST['img3'];
 	$ecritureTheme['Main']['theme']['informations']['titre3'] = $_POST['titre3'];
 	$ecritureTheme['Main']['theme']['informations']['desc3'] = $_POST['desc3'];
 	$ecritureTheme['Main']['theme']['informations']['couleurtitre3'] = $_POST['couleurtitre3'];
 	$ecritureTheme['Main']['theme']['informations']['couleurdesc3'] = $_POST['couleurdesc3'];
+	$ecritureTheme['Main']['theme']['informations']['couleurback3'] = $_POST['couleurback3'];
 
 
 
 
 	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
-
-
 
 
 

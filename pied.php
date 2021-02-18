@@ -2,7 +2,7 @@
 $_Theme_ = new Lire('theme/' . $_Serveur_['General']['theme'] . "/config/config.yml");
 $_Theme_ = $_Theme_->GetTableau();
 ?>
-<footer id="Footer" class="footer-area">
+<footer id="Footer" class="footer-area" style="background-color: var(--footer-bg)">
     <div class="container">
         <div class="row">
 

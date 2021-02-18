@@ -33,12 +33,18 @@ $_Theme_ = $configTheme->GetTableau();
 
             --couleurtitre1: <?= $_Theme_["Main"]['theme']['informations']['couleurtitre1'] ?> !important;
             --couleurdesc1: <?= $_Theme_["Main"]['theme']['informations']['couleurdesc1'] ?> !important;
+            --couleurback1: <?= $_Theme_["Main"]['theme']['informations']['couleurback1'] ?> !important;
 
             --couleurtitre2: <?= $_Theme_["Main"]['theme']['informations']['couleurtitre2'] ?> !important;
             --couleurdesc2: <?= $_Theme_["Main"]['theme']['informations']['couleurdesc2'] ?> !important;
+            --couleurback2: <?= $_Theme_["Main"]['theme']['informations']['couleurback2'] ?> !important;
 
             --couleurtitre3: <?= $_Theme_["Main"]['theme']['informations']['couleurtitre3'] ?> !important;
             --couleurdesc3: <?= $_Theme_["Main"]['theme']['informations']['couleurdesc3'] ?> !important;
+            --couleurback3: <?= $_Theme_["Main"]['theme']['informations']['couleurback3'] ?> !important;
+
+            --footer-bg: <?= $_Theme_["Pied"]['couleurbg'] ?> !important;
+
 
 
 
@@ -81,12 +87,10 @@ $_Theme_ = $configTheme->GetTableau();
     <meta name="author" content="CraftMyWebsite, Teyir, <?= $_Serveur_['General']['name']; ?>" />
     <meta name="publisher" content="<?= $_SERVER["SERVER_NAME"] ?> [contact@<?= $_SERVER["SERVER_NAME"] ?>]"/>
     <meta name="description" content="<?= $_Serveur_['General']['description'] ?>">
-    <meta name="keywords" content="METTRE UN FICHIER DE CONF (bien séparer avec des virgules)">
 
     <meta name="copyright" content="CraftMyWebsite, Teyir, <?= $_Serveur_['General']['name']; ?>"/>
 
     <meta name="robots" content="follow, index, all">
-    <meta name="google" content="notranslate">
 
     <!-- FONTS -->
 

@@ -288,74 +288,6 @@
 
                                     <div class="col-11 mx-auto my-2">
 
-                                        <h4>Vos Résaux Sociaux</h4>
-
-                                        <div class="col-10 mx-auto">
-                                            <input type="hidden" id="jsonReseau" name="jsonReseau" />
-                                            <div id="all-reseau">
-
-                                                <?php if (isset($_Theme_['Pied']['social']) && !empty($_Theme_['Pied']['social'])) foreach ($_Theme_['Pied']['social'] as $value) : ?>
-
-                                                    <div class="form-row jumbotron py-1" data-reseau>
-                                                        <div class="col-12">
-                                                            <label class="control-label">Icone du réseau</label>
-                                                            <input type="text" data-type="icon" class="form-control" placeholder='<i class="fab fa-discord"></i>' value="<?= str_replace('"', "'", $value['icon']); ?>">
-                                                            <small>Disponible sur : <a href="https://fontawesome.com/icons/">
-                                                                    https://fontawesome.com/icons/</a></small>
-                                                        </div>
-
-                                                        <div class="col-12">
-                                                            <label class="control-label">Lien vers le réseau</label>
-                                                            <input type="text" data-type="link" class="form-control" value="<?= str_replace('"', "'", $value['link']) ?>">
-                                                        </div>
-
-                                                        <div class="col-12">
-                                                            <label class="control-label">Message à mettre à côté</label>
-                                                            <input type="text" data-type="message" class="form-control" placeholder="Rejoingnez-nous sur Discord !" value="<?= str_replace('"', "'", $value['message']) ?>">
-                                                        </div>
-
-                                                        <div class="col-4 my-4">
-                                                            <button class="btn btn-danger form-control" onclick="this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement); genJsonReseau(); sendPost('configThemeAdmin');">Supprimer</button>
-                                                        </div>
-
-                                                    </div>
-
-                                                <?php endforeach ?>
-                                            </div>
-
-                                            <div class="form-row well py-1">
-                                                <h5 class="col-12 my-1">Réseau social personnalisé</h5>
-                                                <div class="col-12">
-                                                    <label class="control-label">Icone du réseau</label>
-                                                    <input type="text" class="form-control" id="new-s-icone" placeholder='<i class="fab fa-discord"></i>'>
-                                                    <small>Disponible sur : <a href="https://fontawesome.com/icons/">
-                                                            https://fontawesome.com/icons/</a></small>
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <label class="control-label">Lien vers le réseau</label>
-                                                    <input type="text" id="new-s-link" class="form-control" />
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <label class="control-label">Message à mettre à côté</label>
-                                                    <input type="text" class="form-control" id="new-s-message" placeholder="Rejoingnez-nous sur Discord !">
-                                                </div>
-
-                                                <div class="col-4 my-4">
-                                                    <button class="btn btn-danger form-control">Supprimer</button>
-                                                </div>
-
-
-                                            </div>
-
-                                            <button class="float-right btn btn-primary my-2" onclick="createNewReseau();">
-                                                Ajouter un réseau social
-                                            </button>
-                                            <div class="clearfix"></div>
-
-
-
 
                                             <h4>À Propos</h4>
                                             <small class="my-1">Parlez de votre serveur, ou du but de ce site internet
@@ -369,7 +301,10 @@
 
                                             </div>
 
-                                        </div>
+                                            <label class="control-label" for="couleurfooterbg">Couleur du footer </label>
+                                            <input type="color" id="couleurfooterbg" name="couleurfooterbg" value="<?php echo $_Theme_['Pied']['couleurbg']; ?>">
+
+
 
                                     </div>
 
@@ -432,6 +367,10 @@
                                                     <label class="control-label" for="couleurdesc1">Couleur description </label>
                                                     <input type="color" id="couleurdesc1" name="couleurdesc1" value="<?php echo $_Theme_['Main']['theme']['informations']['couleurdesc1']; ?>">
 
+                                                    <label class="control-label" for="couleurback1">Couleur du fond </label>
+                                                    <input type="color" id="couleurback1" name="couleurback1" value="<?php echo $_Theme_['Main']['theme']['informations']['couleurback1']; ?>">
+
+
                                                 </div>
 
                                                 <div class="col-6">
@@ -452,6 +391,8 @@
                                                     <label class="control-label" for="couleurdesc2">Couleur description </label>
                                                     <input type="color" id="couleurdesc2" name="couleurdesc2" value="<?php echo $_Theme_['Main']['theme']['informations']['couleurdesc2']; ?>">
 
+                                                    <label class="control-label" for="couleurback2">Couleur du fond </label>
+                                                    <input type="color" id="couleurback2" name="couleurback2" value="<?php echo $_Theme_['Main']['theme']['informations']['couleurback2']; ?>">
                                                 </div>
 
                                                 <div class="col-6">
@@ -471,6 +412,9 @@
 
                                                     <label class="control-label" for="couleurdesc3">Couleur description </label>
                                                     <input type="color" id="couleurdesc3" name="couleurdesc3" value="<?php echo $_Theme_['Main']['theme']['informations']['couleurdesc3']; ?>">
+
+                                                    <label class="control-label" for="couleurback3">Couleur du fond </label>
+                                                    <input type="color" id="couleurback3" name="couleurback3" value="<?php echo $_Theme_['Main']['theme']['informations']['couleurback3']; ?>">
 
                                                 </div>
 
@@ -494,7 +438,7 @@
 
             <div class="card-footer">
                 <div class="form-group text-center">
-                    <input type="submit" onClick="genJsonReseau(); sendPost('configThemeAdmin'); document.location.reload();" class="btn btn-success" value="Sauvegarder">
+                    <input type="submit" onClick="sendPost('configThemeAdmin'); document.location.reload();" class="btn btn-success" value="Sauvegarder">
                 </div>
 
                 <script>
@@ -555,23 +499,6 @@
 
     }
 
-    function genJsonReseau() {
-        var final = [];
-        for (let el of document.querySelectorAll("[data-reseau]")) {
-            let temp = {}
-            for (let o = 0; o < el.children.length; o++) {
-                for (let i = 0; i < el.children[o].children.length; i++) {
-                    if (isset(el.children[o].children[i].getAttribute('data-type'))) {
-                        temp[el.children[o].children[i].getAttribute('data-type')] = el.children[o].children[i].value;
-                    }
-                }
-            }
-            final.push(temp);
-        }
-        get('jsonReseau').value = JSON.stringify(final);
-    }
-
-    genJsonReseau();
 
     $("#aboutTheme").val((i, v) => v.replace(/\s{2,}/g, ''));
 </script>

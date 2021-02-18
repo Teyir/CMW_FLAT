@@ -61,14 +61,19 @@
 
     --couleurtitre1: black;
     --couleurdesc1: black;
+    --couleurback1: gray;
 
 
     --couleurtitre2: black;
     --couleurdesc2: black;
+    --couleurback2: gray;
 
 
     --couleurtitre3: black;
     --couleurdesc3: black;
+    --couleurback3: gray;
+
+    --footer-bg: #7f7f7f;
 
 
 }
