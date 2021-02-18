@@ -138,7 +138,7 @@ $skin = preg_replace(
 
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="<?php echo $skin?>" class="card-img" alt="Skin de <?= $joueurDonnees['pseudo'] ?>" style="margin-left: 7px;">
+                                    <img src="<?php echo $skin?>" class="card-img profile-skin3d" alt="Skin de <?= $joueurDonnees['pseudo'] ?>" style="margin-left: 7px;">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
@@ -448,7 +448,7 @@ $skin = preg_replace(
 
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="<?php echo $skin?>" class="card-img" alt="Skin de <?= $joueurDonnees['pseudo'] ?>" style="margin-left: 7px;">
+                                    <img src="<?php echo $skin?>" class="card-img profile-skin3d" alt="Skin de <?= $joueurDonnees['pseudo'] ?>" style="margin-left: 7px;">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
@@ -498,15 +498,12 @@ $skin = preg_replace(
 
                                     <img class="profile-image"
                                          src="<?= $_ImgProfil_->getUrlHeadByPseudo($_Joueur_['pseudo'], 128); ?>"
-                                         style="height:128px; width:128px;"
                                          alt="Image de profil de <?= htmlspecialchars($joueurDonnees['pseudo']) ?>" />
 
                                     <label for="img_profil">
                                         <input type="file" class="form-control-file d-none" name="img_profil" id="img_profil"
                                                onchange='getUploadFileName(this)' required />
-                                        <span class="btn btn-sm btn-primary">
-                                            <i class="fas fa-edit"></i> Choisir une image
-                                        </span>
+                                        <span class="btn btn-sm btn-primary btn-profil-choose"> <i class="fas fa-edit"></i> Choisir une image </span>
                                     </label>
 
 

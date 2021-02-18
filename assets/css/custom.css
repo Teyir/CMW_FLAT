@@ -156,6 +156,12 @@ Table of Content:
 
 */
 
+.profile-image{
+    height:128px;
+    width:128px;
+}
+
+
 .list {
     list-style: none;
     margin: 0px;

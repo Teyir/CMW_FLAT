@@ -12,8 +12,18 @@
     .single-service{
         align-content: center;
     }
-    .liste-membres{
-        max-width: 300px;
+    .btn-profil-choose{
+      font-size: 12px;
+      margin-top: 60px;
+    }
+    .profile-image{
+        height: 100px;
+        width: 100px;
+    }
+
+    .profile-skin3d{
+        height: 250px;
+        width: 115px;
     }
 }
 
