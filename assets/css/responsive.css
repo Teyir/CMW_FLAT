@@ -12,7 +12,9 @@
     .single-service{
         align-content: center;
     }
-
+    .liste-membres{
+        max-width: 300px;
+    }
 }
 
 

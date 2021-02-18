@@ -34,7 +34,7 @@ if (isset($_GET['page_membre'])) {
         <div class="row">
             <!-- Liste des Membres  -->
             <div class="col-md-12 col-lg9 col-sm-12">
-                <table class="table table-dark table-striped table-hover">
+                <table class="table table-dark table-striped table-hover liste-membres">
                     <caption> Nombre de joueurs : <?= count($membres); ?> </caption>
                     <thead>
                     <tr>
@@ -63,7 +63,7 @@ if (isset($_GET['page_membre'])) {
                             </td>
 
                             <td>
-                                <a href="?page=profil&profil=<?= $value['pseudo']; ?>" class="btn btn-reverse">Voir le compte</a>
+                                <a href="?page=profil&profil=<?= $value['pseudo']; ?>" target="_blank" class="btn btn-reverse "><i class="fas fa-external-link-alt"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
