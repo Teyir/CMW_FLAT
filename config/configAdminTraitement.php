@@ -84,6 +84,7 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 
 	$ecritureTheme['Main']['theme']['discord-id'] = $_POST['discord-id'];
 	$ecritureTheme['Main']['theme']['discord-invitation'] = $_POST['discord-invitation'];
+	$ecritureTheme['Main']['theme']['discord-widget'] = $_POST['discord-widget'];
 
 	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
 

@@ -298,8 +298,7 @@
 
 
                                             <h4>À Propos</h4>
-                                            <small class="my-1">Parlez de votre serveur, ou du but de ce site internet
-                                                !</small>
+                                            <small class="my-1">Parlez de votre serveur, ou du but de ce site internet !</small>
 
                                             <div class="col-10 mx-auto">
 
@@ -427,7 +426,15 @@
                                                     <span class="input-group-text" id="inputGroup-sizing-sm">Invitation Discord</span>
                                                 </div>
                                                 <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" class="form-control" placeholder="Liens d'invitation de votre serveur Discord" id="discord-invitation" name="discord-invitation" value="<?= $_Theme_['Main']['theme']['discord-invitation'] ?>">
+
                                             </div>
+
+                                            <div class="custom-control custom-switch" style="margin-top: 20px">
+                                                <input type="checkbox" class="custom-control-input" id="discord-widget" name="discord-widget" <?php if ($_Theme_['Main']['theme']['discord-widget'] == null){} else{echo "checked";} ?>>
+                                                <label class="custom-control-label" for="discord-widget">Activer ou non le widget Discord sur la page d'Accueil </label><br>
+                                            </div>
+
+
                                         </div>
 
 

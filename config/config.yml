@@ -39,10 +39,11 @@ Main:
         logo-h: 310px
         discord-id: "557178315471978515"
         discord-invitation: https://discord.gg/H2eNaZZ98b
+        discord-widget: 'on'
 Pied:
     couleurbg: '#383838'
     couleurtxt: '#d2cbcb'
-    about: sqfqsffsfqsfqsfq
+    about: Ceci est un message pour le footer
     link1: https://google.fr
     linktxt1: google
     link2: /cc

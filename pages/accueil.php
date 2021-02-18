@@ -182,7 +182,11 @@ $DiscordOnline = $obj->presence_count;
 
             <!-- MINIATURES -->
             <div class="row info-articles col-md-12 col-lg-4 col-sm-12 mx-auto">
-                <?php for ($i = 1; $i < count($lectureAccueil['Infos']) + 1; $i++) : ?>
+
+            <?php if ($_Theme_['Main']['theme']['discord-widget'] == null){} else{ ?>
+                <iframe style="margin-left: 77px" data-aos="fade-left" src="https://discord.com/widget?id=<?=$_Theme_['Main']['theme']['discord-id']?>&theme=dark" width="220" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            <?php } ?>
+        <?php for ($i = 1; $i < count($lectureAccueil['Infos']) + 1; $i++) : ?>
                     <article class="col-12 info-content" data-aos="fade-left">
                         <div class="miniature-card-4 text-center">
                             <img src="theme/upload/navRap/<?= $lectureAccueil['Infos'][$i]['image'] ?>" alt="Image <?= $i ?>" class="img img-responsive">

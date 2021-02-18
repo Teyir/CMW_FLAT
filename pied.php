@@ -9,7 +9,7 @@ $_Theme_ = $_Theme_->GetTableau();
             <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
                 <?php if(isset($_Theme_['Pied']['about']) && !empty(trim($_Theme_['Pied']['about']))) : ?>
                     <h4 style="color: var(--footer-txt)">À propos</h4>
-                    <p><?= $_Theme_['Pied']['about']; ?></p>
+                    <p><?= $_Theme_['Pied']['about'] ?></p>
                 <?php endif; ?>
                 <div class="footer-logo">
                     <img src="<?= $_Theme_['Main']['theme']['logo'] ?>" alt="">
