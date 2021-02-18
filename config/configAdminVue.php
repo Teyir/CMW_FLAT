@@ -257,9 +257,6 @@
 
                                         </select>
 
-                                        <label class="control-label" for="bg">Image de fonds </label>
-                                        <input class="form-control" type="url" name="bg" id="bg" value="<?= $_Theme_['Main']['theme']['bg'] ?>" placeholder="Entrer le liens de votre image">
-
                                         <label class="control-label" for="logo">Logo du serveur </label>
                                         <input class="form-control" type="url" name="logo" id="logo" value="<?= $_Theme_['Main']['theme']['logo'] ?>" placeholder="Entrer le liens de votre logo">
 

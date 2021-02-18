@@ -588,6 +588,29 @@ ul {
 ============================================================================================ */
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
+
+
+.nav-item .dropdown-menu .insc_nav{
+    color: black;
+}
+
+.nav-item .dropdown-menu .insc_nav:hover{
+    color: var(--txtnav);
+    background: var(--main-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .header_area {
     position: absolute;
     width: 100%;

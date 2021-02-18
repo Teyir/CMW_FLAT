@@ -42,10 +42,6 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 
 	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
 
-// Modification du bg
-	$ecritureTheme['Main']['theme']['bg'] = $_POST['bg'];
-
-	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
 
 // Modification du logo
 	$ecritureTheme['Main']['theme']['logo'] = $_POST['logo'];

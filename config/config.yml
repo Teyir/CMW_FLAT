@@ -29,8 +29,6 @@ Main:
             couleurtitre3: '#695d6f'
             couleurdesc3: '#2f985c'
         police: "'Poppins', sans-serif;"
-        bg: >
-            https://images.sky-dream.fr/upload-img-gfx/9cf5b64d6cd2963ef96eabb4b2c1cbe6.jpg
         logo: 'https://images.sky-dream.fr/upload-img-gfx/SKYDREAM%20TRASNPARENT.png'
         logo-l: 350px
         logo-h: 240px

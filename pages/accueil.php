@@ -15,7 +15,7 @@ $DiscordOnline = $obj->presence_count;
 <!-- PARTIE HEADER -->
 <div class="home_banner_area">
     <div class="banner_inner d-flex align-items-center">
-        <div class="overlay" style="background: url('<?= $_Theme_['Main']['theme']['bg'] ?>')
+        <div class="overlay" style="background: url('theme/upload/bg.png');
             no-repeat scroll center center; background-size: cover;"></div>
         <div class="container" >
             <div class="row align-items-center" >
