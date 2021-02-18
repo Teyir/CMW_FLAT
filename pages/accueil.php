@@ -145,7 +145,7 @@ $DiscordOnline = $obj->presence_count;
                                         <?= $news[$i]['message']; ?>
                                     </div>
                                     <div class="card-footer d-flex">
-                                        <h3 style="color: var(--base-color);">Par <a href="?page=profil&profil=<?= $news[$i]['auteur']; ?>"><?= $news[$i]['auteur']; ?></a></h3>
+                                        <h3 style="color: var(--base-color);font-size: 17px">Par <a href="?page=profil&profil=<?= $news[$i]['auteur']; ?>"><?= $news[$i]['auteur']; ?></a></h3>
                                         <div class="ml-auto">
                                             <?php
                                             if (Permission::getInstance()->verifPerm("connect")) :
@@ -153,14 +153,14 @@ $DiscordOnline = $obj->presence_count;
                                                 $getCheckLike = $reqCheckLike->fetch(PDO::FETCH_ASSOC);
                                                 $checkLike = $getCheckLike['pseudo'];
                                                 if ($_Joueur_['pseudo'] == $checkLike) : ?>
-                                                    <a href="#" class="h5 mr-3" data-toggle="modal" data-target="#news<?= $news[$i]['id'] ?>">Commenter (<?= $countCommentaires ?>)</a> <i class="fa fa-thumbs-up"></i> <?= $countLikesPlayers ?>
+                                                    <a href="#" class="h5 mr-3" style="font-size: 15px" data-toggle="modal" data-target="#news<?= $news[$i]['id'] ?>">Commenter (<?= $countCommentaires ?>)</a> <i class="fa fa-thumbs-up"></i> <?= $countLikesPlayers ?>
                                                 <?php else : ?>
-                                                    <a href="#" class="h5 mr-3" data-toggle="modal" data-target="#news<?= $news[$i]['id'] ?>">Commenter (<?= $countCommentaires ?>)</a>
-                                                    <a href="?&action=likeNews&id_news=<?= $news[$i]['id'] ?>" class="h5 mx-3">J'aime</a>
-                                                    <i class="fa fa-thumbs-up"></i> <?= $countLikesPlayers ?>
+                                                    <a href="#" class="h5 mr-3" style="font-size: 15px" data-toggle="modal" data-target="#news<?= $news[$i]['id'] ?>">Commenter (<?= $countCommentaires ?>)</a>
+                                                    <a href="?&action=likeNews&id_news=<?= $news[$i]['id'] ?>" style="font-size: 14px" class="h5 mx-3">J'aime</a>
+                                                    <i class="fa fa-thumbs-up" style="font-size: 15px"></i> <?= $countLikesPlayers ?>
                                                 <?php endif; ?>
                                             <?php else : ?>
-                                                <a href="#" class="h5 mr-3" data-toggle="modal" data-target="#news<?= $news[$i]['id'] ?>">Commenter (<?= $countCommentaires ?>)</a> <i class="fa fa-thumbs-up"></i> <?= $countLikesPlayers ?>
+                                                <a href="#" class="h5 mr-3" data-toggle="modal" style="font-size: 15px" data-target="#news<?= $news[$i]['id'] ?>">Commenter (<?= $countCommentaires ?>)</a> <i class="fa fa-thumbs-up"></i> <?= $countLikesPlayers ?>
                                             <?php endif; ?>
                                         </div>
                                     </div>
