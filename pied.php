@@ -145,6 +145,7 @@ $_Theme_ = $_Theme_->GetTableau();
             <div class="col-lg-3 col-md-8 mb-4 mb-xl-0 single-footer-widget">
                 <h4>5 derniers inscrits site</h4>
 
+                <!-- SOON -->
 
 
             </div>
