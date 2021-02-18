@@ -304,6 +304,90 @@
                                             <label class="control-label" for="couleurfooterbg">Couleur du footer </label>
                                             <input type="color" id="couleurfooterbg" name="couleurfooterbg" value="<?php echo $_Theme_['Pied']['couleurbg']; ?>">
 
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <label class="control-label" for="link1">Texte liens n° 1 </label>
+                                                <input class="form-control" type="url" name="link1" id="link1" value="<?= $_Theme_['Pied']['link1']?>" placeholder="https://google.fr">
+                                            </div>
+                                            <div class="col">
+                                                <label class="control-label" for="linktxt1">Liens n° 1 </label>
+                                                <input class="form-control" type="text" name="linktxt1" id="linktxt1" value="<?= $_Theme_['Pied']['linktxt1'] ?>" placeholder="Google">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <label class="control-label" for="link2">Texte liens n° 2 </label>
+                                                <input class="form-control" type="url" name="link1" id="link2" value="<?= $_Theme_['Pied']['link2']?>" placeholder="https://google.fr">
+                                            </div>
+                                            <div class="col">
+                                                <label class="control-label" for="linktxt2">Liens n° 2 </label>
+                                                <input class="form-control" type="text" name="linktxt2" id="linktxt2" value="<?= $_Theme_['Pied']['linktxt2'] ?>" placeholder="Google">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <label class="control-label" for="link3">Texte liens n° 3 </label>
+                                                <input class="form-control" type="url" name="link1" id="link3" value="<?= $_Theme_['Pied']['link3']?>" placeholder="https://google.fr">
+                                            </div>
+                                            <div class="col">
+                                                <label class="control-label" for="linktxt3">Liens n° 3 </label>
+                                                <input class="form-control" type="text" name="linktxt3" id="linktxt3" value="<?= $_Theme_['Pied']['linktxt3'] ?>" placeholder="Google">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <label class="control-label" for="link4">Texte liens n° 4 </label>
+                                                <input class="form-control" type="url" name="link1" id="link4" value="<?= $_Theme_['Pied']['link4']?>" placeholder="https://google.fr">
+                                            </div>
+                                            <div class="col">
+                                                <label class="control-label" for="linktxt4">Liens n° 4 </label>
+                                                <input class="form-control" type="text" name="linktxt4" id="linktxt4" value="<?= $_Theme_['Pied']['linktxt4'] ?>" placeholder="Google">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <label class="control-label" for="link5">Texte liens n° 5 </label>
+                                                <input class="form-control" type="url" name="link1" id="link5" value="<?= $_Theme_['Pied']['link5']?>" placeholder="https://google.fr">
+                                            </div>
+                                            <div class="col">
+                                                <label class="control-label" for="linktxt5">Liens n° 5 </label>
+                                                <input class="form-control" type="text" name="linktxt5" id="linktxt5" value="<?= $_Theme_['Pied']['linktxt5'] ?>" placeholder="Google">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <label class="control-label" for="link6">Texte liens n° 6 </label>
+                                                <input class="form-control" type="url" name="link1" id="link6" value="<?= $_Theme_['Pied']['link6']?>" placeholder="https://google.fr">
+                                            </div>
+                                            <div class="col">
+                                                <label class="control-label" for="linktxt6">Liens n° 6 </label>
+                                                <input class="form-control" type="text" name="linktxt6" id="linktxt6" value="<?= $_Theme_['Pied']['linktxt6'] ?>" placeholder="Google">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <label class="control-label" for="link7">Texte liens n° 7 </label>
+                                                <input class="form-control" type="url" name="link1" id="link7" value="<?= $_Theme_['Pied']['link7']?>" placeholder="https://google.fr">
+                                            </div>
+                                            <div class="col">
+                                                <label class="control-label" for="linktxt7">Liens n° 7 </label>
+                                                <input class="form-control" type="text" name="linktxt7" id="linktxt7" value="<?= $_Theme_['Pied']['linktxt7'] ?>" placeholder="Google">
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
 
 
                                     </div>

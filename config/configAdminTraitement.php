@@ -6,13 +6,28 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 
 
 
-//FOOTER PART (Choix des réseaux et du "A Propos")
+// FOOTER
 
 
 	$ecritureTheme['Pied']['about'] = nl2br(htmlspecialchars($_POST['about']));
 
 
 	$ecritureTheme['Pied']['couleurbg'] = $_POST['couleurfooterbg'];
+
+	$ecritureTheme['Pied']['link1'] = $_POST['link1'];
+	$ecritureTheme['Pied']['linktxt1'] = $_POST['linktxt1'];
+	$ecritureTheme['Pied']['link2'] = $_POST['link2'];
+	$ecritureTheme['Pied']['linktxt2'] = $_POST['linktxt2'];
+	$ecritureTheme['Pied']['link3'] = $_POST['link3'];
+	$ecritureTheme['Pied']['linktxt3'] = $_POST['linktxt3'];
+	$ecritureTheme['Pied']['link4'] = $_POST['link4'];
+	$ecritureTheme['Pied']['linktxt4'] = $_POST['linktxt4'];
+	$ecritureTheme['Pied']['link5'] = $_POST['link5'];
+	$ecritureTheme['Pied']['linktxt5'] = $_POST['linktxt5'];
+	$ecritureTheme['Pied']['link6'] = $_POST['link6'];
+	$ecritureTheme['Pied']['linktxt6'] = $_POST['linktxt6'];
+	$ecritureTheme['Pied']['link7'] = $_POST['link7'];
+	$ecritureTheme['Pied']['linktxt7'] = $_POST['linktxt7'];
 
 
 	$ecriture = new Ecrire('theme/'.$_Serveur_['General']['theme'].'/config/config.yml', $ecritureTheme);

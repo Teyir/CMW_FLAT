@@ -28,10 +28,116 @@ $_Theme_ = $_Theme_->GetTableau();
             <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
                 <h4>Liens utiles</h4>
                 <ul>
-                    <!-- Faire une boucle pour choisir le nombre de liens-->
-                    <li><a href="#">Liens 1</a></li>
-                    <li><a href="#">Liens 2</a></li>
-                    <li><a href="#">Liens 4</a></li>
+                    <?php
+
+                        if ($_Theme_['Pied']['link1'] == null){
+
+                        } else{
+                            ?><li><a href="<?= $_Theme_['Pied']['link1'] ?>">
+                             <?php
+                                if ($_Theme_['Pied']['linktxt1'] == null){
+                                    echo "Liens 1";
+                                }else{
+                                    echo $_Theme_['Pied']['linktxt1'];
+                                }
+                             ?>
+                            </a></li><?php
+                        }
+
+                    if ($_Theme_['Pied']['link2'] == null){
+
+                    } else{
+                        ?><li><a href="<?= $_Theme_['Pied']['link2'] ?>">
+                            <?php
+                            if ($_Theme_['Pied']['linktxt2'] == null){
+                                echo "Liens 2";
+                            }else{
+                                echo $_Theme_['Pied']['linktxt2'];
+                            }
+                            ?>
+                        </a></li><?php
+                    }
+
+
+                    if ($_Theme_['Pied']['link3'] == null){
+
+                    } else{
+                        ?><li><a href="<?= $_Theme_['Pied']['link3'] ?>">
+                            <?php
+                            if ($_Theme_['Pied']['linktxt3'] == null){
+                                echo "Liens 3";
+                            }else{
+                                echo $_Theme_['Pied']['linktxt3'];
+                            }
+                            ?>
+                        </a></li><?php
+                    }
+
+                    if ($_Theme_['Pied']['link4'] == null){
+
+                    } else{
+                        ?><li><a href="<?= $_Theme_['Pied']['link4'] ?>">
+                            <?php
+                            if ($_Theme_['Pied']['linktxt4'] == null){
+                                echo "Liens 4";
+                            }else{
+                                echo $_Theme_['Pied']['linktxt4'];
+                            }
+                            ?>
+                        </a></li><?php
+                    }
+
+
+                    if ($_Theme_['Pied']['link5'] == null){
+
+                    } else{
+                        ?><li><a href="<?= $_Theme_['Pied']['link5'] ?>">
+                            <?php
+                            if ($_Theme_['Pied']['linktxt5'] == null){
+                                echo "Liens 5";
+                            }else{
+                                echo $_Theme_['Pied']['linktxt5'];
+                            }
+                            ?>
+                        </a></li><?php
+                    }
+
+                    if ($_Theme_['Pied']['link6'] == null){
+
+                    } else{
+                        ?><li><a href="<?= $_Theme_['Pied']['link6'] ?>">
+                            <?php
+                            if ($_Theme_['Pied']['linktxt6'] == null){
+                                echo "Liens 6";
+                            }else{
+                                echo $_Theme_['Pied']['linktxt6'];
+                            }
+                            ?>
+                        </a></li><?php
+                    }
+
+
+                    if ($_Theme_['Pied']['link7'] == null){
+
+                    } else{
+                        ?><li><a href="<?= $_Theme_['Pied']['link7'] ?>">
+                            <?php
+                            if ($_Theme_['Pied']['linktxt7'] == null){
+                                echo "Liens 7";
+                            }else{
+                                echo $_Theme_['Pied']['linktxt7'];
+                            }
+                            ?>
+                        </a></li><?php
+                    }
+
+
+
+
+
+                    ?>
+
+
 
                 </ul>
             </div>

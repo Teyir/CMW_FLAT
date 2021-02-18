@@ -4,8 +4,8 @@ Main:
         couleurs:
             main-color-bg: '#e6e6e6'
             secondary-color-bg: '#43b9f4'
-            base-color: '#d6d6d6'
-            main-color: '#3805f0'
+            base-color: '#000000'
+            main-color: '#8b6bff'
             active-color: '#c772e4'
             lightest: '#000000'
             darkest: '#3f3f3f'
@@ -40,3 +40,17 @@ Main:
 Pied:
     couleurbg: '#383838'
     about: sqfqsffsfqsfqsfq
+    link1: "http://google.fr"
+    linktxt1: "google"
+    link2: "http://facebook.fr"
+    linktxt2:
+    link3:
+    linktxt3:
+    link4:
+    linktxt4:
+    link5:
+    linktxt5:
+    link6:
+    linktxt6:
+    link7:
+    linktxt7:
