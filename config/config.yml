@@ -4,7 +4,7 @@ Main:
         couleurs:
             main-color-bg: '#e6e6e6'
             secondary-color-bg: '#43b9f4'
-            base-color: '#000000'
+            base-color: '#343c65'
             main-color: '#8b6bff'
             active-color: '#c772e4'
             lightest: '#000000'
@@ -32,27 +32,28 @@ Main:
             couleurdesc3: '#878786'
             couleurback3: '#c4c4c4'
         police: "'Poppins', sans-serif;"
-        shadowheader: 'on'
+        shadowheader: null
         couleurshadowheader: '#292929'
-        logo: 'https://images.sky-dream.fr/upload-img-gfx/SKYDREAM%20TRASNPARENT.png'
-        logo-l: 350px
-        logo-h: 240px
+        logo: 'https://images.sky-dream.fr/upload-img-gfx/NO%20LETTERS.png'
+        logo-l: 300px
+        logo-h: 310px
         discord-id: "557178315471978515"
         discord-invitation: https://discord.gg/H2eNaZZ98b
 Pied:
     couleurbg: '#383838'
+    couleurtxt: '#d2cbcb'
     about: sqfqsffsfqsfqsfq
-    link1: ""
+    link1: https://google.fr
     linktxt1: google
-    link2: null
-    linktxt2: ""
-    link3: null
+    link2: /cc
+    linktxt2: Cc
+    link3: ""
     linktxt3: ""
-    link4: null
+    link4: ""
     linktxt4: ""
-    link5: null
+    link5: ""
     linktxt5: ""
-    link6: null
+    link6: ""
     linktxt6: ""
-    link7: null
+    link7: ""
     linktxt7: ""

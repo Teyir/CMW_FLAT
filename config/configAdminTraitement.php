@@ -14,6 +14,8 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 
 	$ecritureTheme['Pied']['couleurbg'] = $_POST['couleurfooterbg'];
 
+	$ecritureTheme['Pied']['couleurtxt'] = $_POST['couleurfootertxt'];
+
 	$ecritureTheme['Pied']['link1'] = $_POST['link1'];
 	$ecritureTheme['Pied']['linktxt1'] = $_POST['linktxt1'];
 	$ecritureTheme['Pied']['link2'] = $_POST['link2'];

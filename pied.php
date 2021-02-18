@@ -8,7 +8,7 @@ $_Theme_ = $_Theme_->GetTableau();
 
             <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
                 <?php if(isset($_Theme_['Pied']['about']) && !empty(trim($_Theme_['Pied']['about']))) : ?>
-                    <h4>À propos</h4>
+                    <h4 style="color: var(--footer-txt)">À propos</h4>
                     <p><?= $_Theme_['Pied']['about']; ?></p>
                 <?php endif; ?>
                 <div class="footer-logo">
@@ -17,7 +17,7 @@ $_Theme_ = $_Theme_->GetTableau();
             </div>
 
             <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-                <h4>Si tu as une idée hésite pas</h4>
+                <h4 style="color: var(--footer-txt)">Si tu as une idée hésite pas</h4>
                 <div class="footer-address">
 
                     <span>1</span>
@@ -26,7 +26,7 @@ $_Theme_ = $_Theme_->GetTableau();
             </div>
 
             <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-                <h4>Liens utiles</h4>
+                <h4 style="color: var(--footer-txt)">Liens utiles</h4>
                 <ul>
                     <?php
 
@@ -143,7 +143,7 @@ $_Theme_ = $_Theme_->GetTableau();
             </div>
 
             <div class="col-lg-3 col-md-8 mb-4 mb-xl-0 single-footer-widget">
-                <h4>5 derniers inscrits site</h4>
+                <h4 style="color: var(--footer-txt)">5 derniers inscrits site</h4>
 
                 <!-- SOON -->
 
