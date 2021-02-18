@@ -45,6 +45,8 @@ $_Theme_ = $configTheme->GetTableau();
 
             --footer-bg: <?= $_Theme_["Pied"]['couleurbg'] ?> !important;
 
+            --couleurshadowheader: <?= $_Theme_["Main"]['theme']['couleurshadowheader'] ?> !important;
+
 
 
 

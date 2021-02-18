@@ -257,6 +257,14 @@
 
                                         </select>
 
+                                        <div class="custom-control custom-switch" style="margin-top: 20px">
+                                            <input type="checkbox" class="custom-control-input" id="shadowheader" name="shadowheader" <?php if ($_Theme_['Main']['theme']['shadowheader'] == null){} else{echo "checked";} ?>>
+                                            <label class="custom-control-label" for="shadowheader">Activer ou non l'ombre pour le texte dans la partie "header" </label><br>
+
+                                            <input type="color" id="couleurshadowheader" name="couleurshadowheader" value="<?php echo $_Theme_['Main']['theme']['couleurshadowheader']; ?>">
+                                            <label class="control-label" for="couleurshadowheader">Couleur de l'ombre </label>
+                                        </div>
+
                                         <label class="control-label" for="logo">Logo du serveur </label>
                                         <input class="form-control" type="url" name="logo" id="logo" value="<?= $_Theme_['Main']['theme']['logo'] ?>" placeholder="Entrer le liens de votre logo">
 

@@ -32,25 +32,27 @@ Main:
             couleurdesc3: '#878786'
             couleurback3: '#c4c4c4'
         police: "'Poppins', sans-serif;"
+        shadowheader: 'on'
+        couleurshadowheader: '#292929'
         logo: 'https://images.sky-dream.fr/upload-img-gfx/SKYDREAM%20TRASNPARENT.png'
         logo-l: 350px
         logo-h: 240px
-        discord-id: "685431569472946197"
-        discord-invitation: https://discord.gg/2dwkBYP5Gr
+        discord-id: "557178315471978515"
+        discord-invitation: https://discord.gg/H2eNaZZ98b
 Pied:
     couleurbg: '#383838'
     about: sqfqsffsfqsfqsfq
-    link1: "http://google.fr"
-    linktxt1: "google"
-    link2: "http://facebook.fr"
-    linktxt2:
-    link3:
-    linktxt3:
-    link4:
-    linktxt4:
-    link5:
-    linktxt5:
-    link6:
-    linktxt6:
-    link7:
-    linktxt7:
+    link1: ""
+    linktxt1: google
+    link2: null
+    linktxt2: ""
+    link3: null
+    linktxt3: ""
+    link4: null
+    linktxt4: ""
+    link5: null
+    linktxt5: ""
+    link6: null
+    linktxt6: ""
+    link7: null
+    linktxt7: ""

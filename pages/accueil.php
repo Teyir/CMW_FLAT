@@ -32,9 +32,9 @@ $DiscordOnline = $obj->presence_count;
 
                 <div class="col" >
                     <div class="banner_content" >
-                        <h3 style="text-shadow: black 1px 0 10px"><?= $_Serveur_['General']['name']; ?></h3>
+                        <h3 style="<?php if ($_Theme_['Main']['theme']['shadowheader'] == null){} else{echo "text-shadow: var(--couleurshadowheader) 3px 0 10px";} ?>"><?= $_Serveur_['General']['name']; ?></h3>
                         <hr/>
-                        <h5 style="text-shadow: black 3px 0 10px"><?= $_Serveur_['General']['description']; ?></h5>
+                        <h5 style="<?php if ($_Theme_['Main']['theme']['shadowheader'] == null){} else{echo "text-shadow: var(--couleurshadowheader) 3px 0 10px";} ?>"><?= $_Serveur_['General']['description']; ?></h5>
 
                         <div class="svg-wrapper1">
                             <svg height="40" width="220" >
