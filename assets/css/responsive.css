@@ -31,6 +31,12 @@
 }
 
 
+@media (max-width: 767px) {
+    .profile-skin3d{
+        height: 450px;
+        width: 207px;
+    }
+}
 
 
 

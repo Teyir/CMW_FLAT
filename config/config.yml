@@ -5,17 +5,17 @@ Main:
             fade-bg1: '#c6cdd2'
             fade-bg2: '#b8dcff'
             secondary-color-bg: '#43b9f4'
-            base-color: '#343c65'
+            base-color: '#47478a'
             main-color: '#8b6bff'
             active-color: '#c772e4'
             lightest: '#000000'
-            darkest: '#3f3f3f'
+            darkest: '#f01414'
             bonus1: '#009ffd'
             bonus2: '#06d6a0'
             txtnav: '#ffffff'
             boutiquestockclr: '#6a1fdb'
         informations:
-            opacitybg: null
+            opacitybg: 'on'
             img1: https://images.sky-dream.fr/upload-img-site/tokens-16000.png
             titre1: Achetez mes tokens!
             desc1: Achetez mes beaux tokens....

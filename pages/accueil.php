@@ -24,7 +24,7 @@ $DiscordOnline = $obj->presence_count;
                     <img class="animate__animated animate__pulse animate__slower animate__infinite infinite "
                          src="<?= $_Theme_['Main']['theme']['logo'] ?>" style="height: var(--logoh); width: var(--logol);">
 
-                    <p style="font-size: x-large; margin-top: 10px; line-height: 25px"><strong class="counter" data-to="<?= $playeronline ?>" data-speed="7000"><?= $playeronline ?>
+                    <p class="joueurs_header"><strong class="counter" data-to="<?= $playeronline ?>" data-speed="7000"><?= $playeronline ?>
                         </strong> / <?= $maxPlayers; ?> <br>Joueurs en ligne !</p>
 
                 </div>
@@ -32,9 +32,9 @@ $DiscordOnline = $obj->presence_count;
 
                 <div class="col" >
                     <div class="banner_content" >
-                        <h3 style="<?php if ($_Theme_['Main']['theme']['shadowheader'] == null){} else{echo "text-shadow: var(--couleurshadowheader) 3px 0 10px";} ?>"><?= $_Serveur_['General']['name']; ?></h3>
+                        <h3 class="title_header" style="<?php if ($_Theme_['Main']['theme']['shadowheader'] == null){} else{echo "text-shadow: var(--couleurshadowheader) 3px 0 10px";} ?>"><?= $_Serveur_['General']['name']; ?></h3>
                         <hr/>
-                        <h5 style="<?php if ($_Theme_['Main']['theme']['shadowheader'] == null){} else{echo "text-shadow: var(--couleurshadowheader) 3px 0 10px";} ?>"><?= $_Serveur_['General']['description']; ?></h5>
+                        <h5 class="description_header" style="<?php if ($_Theme_['Main']['theme']['shadowheader'] == null){} else{echo "text-shadow: var(--couleurshadowheader) 3px 0 10px";} ?>"><?= $_Serveur_['General']['description']; ?></h5>
 
                         <div class="svg-wrapper1">
                             <svg height="40" width="220" >
@@ -50,7 +50,7 @@ $DiscordOnline = $obj->presence_count;
                             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                 <rect id="shape" height="40" width="150" />
                                 <div id="text">
-                                    <button onclick="copierDiscord();" type="button"><span class="spot con-tooltip " >Discord <span class="tooltip" style="color: whitesmoke">Nous sommes actuellement <strong style="color: white"><?= $DiscordOnline?></strong> membres connectés sur notre Discord !</span></span></button>
+                                    <button onclick="copierDiscord();" type="button"><span class="spot con-tooltip " style="margin-top: 6px" >Discord <span class="tooltip" style="color: whitesmoke">Nous sommes actuellement <strong style="color: white"><?= $DiscordOnline?></strong> membres connectés sur notre Discord !</span></span></button>
                                     <input type="text" style="position:absolute;top:0;left:0;z-index:-9999;" id="CopieDiscord" value="<?= $_Theme_['Main']['theme']['discord-invitation']; ?>">
                                 </div>
                             </svg>
@@ -180,12 +180,15 @@ $DiscordOnline = $obj->presence_count;
                 <?php endif; ?>
             </div>
 
-            <!-- MINIATURES -->
+            <!-- MINIATURES + WIDGETS -->
             <div class="row info-articles col-md-12 col-lg-4 col-sm-12 mx-auto">
 
             <?php if ($_Theme_['Main']['theme']['discord-widget'] == null){} else{ ?>
-                <iframe style="margin-left: 77px" data-aos="fade-left" src="https://discord.com/widget?id=<?=$_Theme_['Main']['theme']['discord-id']?>&theme=dark" width="220" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-            <?php } ?>
+
+                        <iframe class="mx-auto" data-aos="fade-left" src="https://discord.com/widget?id=<?=$_Theme_['Main']['theme']['discord-id']?>&theme=dark" width="220" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
+                        <?php } ?>
+
         <?php for ($i = 1; $i < count($lectureAccueil['Infos']) + 1; $i++) : ?>
 
                     <article class="col-12 info-content" data-aos="fade-left">

@@ -9,19 +9,21 @@ $_Theme_ = $_Theme_->GetTableau();
             <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
                 <?php if(isset($_Theme_['Pied']['about']) && !empty(trim($_Theme_['Pied']['about']))) : ?>
                     <h4 style="color: var(--footer-txt)">À propos</h4>
-                    <p><?= $_Theme_['Pied']['about'] ?></p>
+                    <p style="color: var(--footer-txt)"><?= $_Theme_['Pied']['about'] ?></p>
                 <?php endif; ?>
                 <div class="footer-logo">
-                    <img src="<?= $_Theme_['Main']['theme']['logo'] ?>" alt="">
+                    <img class="footer_logo" src="<?= $_Theme_['Main']['theme']['logo'] ?>" alt="Logo <?= $_Serveur_['General']['name']; ?>">
                 </div>
             </div>
 
             <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-                <h4 style="color: var(--footer-txt)">Si tu as une idée hésite pas</h4>
+                <h4 style="color: var(--footer-txt)">5 Derniers votes</h4>
                 <div class="footer-address">
 
-                    <span>1</span>
-                    <span>2</span>
+
+                    <!-- GESTION DES DERNIERS VOTES-->
+                    <?php require_once "theme/Flat/assets/php/footer_votes.php" ?>
+
                 </div>
             </div>
 
@@ -33,7 +35,7 @@ $_Theme_ = $_Theme_->GetTableau();
                         if ($_Theme_['Pied']['link1'] == null){
 
                         } else{
-                            ?><li><a href="<?= $_Theme_['Pied']['link1'] ?>">
+                            ?><li><a href="<?= $_Theme_['Pied']['link1'] ?>" style="color: var(--footer-txt)" onmouseover="this.style.color='var(--active-color)';" onmouseout="this.style.color='var(--footer-txt)';">
                              <?php
                                 if ($_Theme_['Pied']['linktxt1'] == null){
                                     echo "Liens 1";
@@ -47,7 +49,7 @@ $_Theme_ = $_Theme_->GetTableau();
                     if ($_Theme_['Pied']['link2'] == null){
 
                     } else{
-                        ?><li><a href="<?= $_Theme_['Pied']['link2'] ?>">
+                        ?><li><a href="<?= $_Theme_['Pied']['link2'] ?>" style="color: var(--footer-txt)" onmouseover="this.style.color='var(--active-color)';" onmouseout="this.style.color='var(--footer-txt)';">
                             <?php
                             if ($_Theme_['Pied']['linktxt2'] == null){
                                 echo "Liens 2";
@@ -62,7 +64,7 @@ $_Theme_ = $_Theme_->GetTableau();
                     if ($_Theme_['Pied']['link3'] == null){
 
                     } else{
-                        ?><li><a href="<?= $_Theme_['Pied']['link3'] ?>">
+                        ?><li><a href="<?= $_Theme_['Pied']['link3'] ?>" style="color: var(--footer-txt)" onmouseover="this.style.color='var(--active-color)';" onmouseout="this.style.color='var(--footer-txt)';">
                             <?php
                             if ($_Theme_['Pied']['linktxt3'] == null){
                                 echo "Liens 3";
@@ -76,7 +78,7 @@ $_Theme_ = $_Theme_->GetTableau();
                     if ($_Theme_['Pied']['link4'] == null){
 
                     } else{
-                        ?><li><a href="<?= $_Theme_['Pied']['link4'] ?>">
+                        ?><li><a href="<?= $_Theme_['Pied']['link4'] ?>" style="color: var(--footer-txt)" onmouseover="this.style.color='var(--active-color)';" onmouseout="this.style.color='var(--footer-txt)';">
                             <?php
                             if ($_Theme_['Pied']['linktxt4'] == null){
                                 echo "Liens 4";
@@ -91,7 +93,7 @@ $_Theme_ = $_Theme_->GetTableau();
                     if ($_Theme_['Pied']['link5'] == null){
 
                     } else{
-                        ?><li><a href="<?= $_Theme_['Pied']['link5'] ?>">
+                        ?><li><a href="<?= $_Theme_['Pied']['link5'] ?>" style="color: var(--footer-txt)" onmouseover="this.style.color='var(--active-color)';" onmouseout="this.style.color='var(--footer-txt)';">
                             <?php
                             if ($_Theme_['Pied']['linktxt5'] == null){
                                 echo "Liens 5";
@@ -105,7 +107,7 @@ $_Theme_ = $_Theme_->GetTableau();
                     if ($_Theme_['Pied']['link6'] == null){
 
                     } else{
-                        ?><li><a href="<?= $_Theme_['Pied']['link6'] ?>">
+                        ?><li><a href="<?= $_Theme_['Pied']['link6'] ?>" style="color: var(--footer-txt)" onmouseover="this.style.color='var(--active-color)';" onmouseout="this.style.color='var(--footer-txt)';">
                             <?php
                             if ($_Theme_['Pied']['linktxt6'] == null){
                                 echo "Liens 6";
@@ -120,7 +122,7 @@ $_Theme_ = $_Theme_->GetTableau();
                     if ($_Theme_['Pied']['link7'] == null){
 
                     } else{
-                        ?><li><a href="<?= $_Theme_['Pied']['link7'] ?>">
+                        ?><li><a href="<?= $_Theme_['Pied']['link7'] ?>" style="color: var(--footer-txt)" onmouseover="this.style.color='var(--active-color)';" onmouseout="this.style.color='var(--footer-txt)';">
                             <?php
                             if ($_Theme_['Pied']['linktxt7'] == null){
                                 echo "Liens 7";
@@ -143,10 +145,10 @@ $_Theme_ = $_Theme_->GetTableau();
             </div>
 
             <div class="col-lg-3 col-md-8 mb-4 mb-xl-0 single-footer-widget">
-                <h4 style="color: var(--footer-txt)">5 derniers inscrits site</h4>
+                <h4 style="color: var(--footer-txt)">3 derniers inscrits site</h4>
 
-                <!-- SOON -->
-
+                <!-- GESTION DES DERNIERS INSCRITS-->
+                <?php require_once "theme/Flat/assets/php/footer_insc.php" ?>
 
             </div>
         </div>
