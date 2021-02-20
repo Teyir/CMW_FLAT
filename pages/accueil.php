@@ -197,7 +197,7 @@ $DiscordOnline = $obj->presence_count;
                                 <div class="miniature-description"><?= $lectureAccueil['Infos'][$i]['message']; ?></div>
 
                                 <div class="card-footer">
-                                    <button type="button" href="<?= $lectureAccueil['Infos'][$i]['lien']; ?>" class="btn btn-min" style="background-color: #65ffdc">S'y rendre !</button>
+                                    <button type="button" onclick="window.location.href='<?= $lectureAccueil['Infos'][$i]['lien']; ?>'"  class="btn btn-min" style="background-color: #65ffdc">S'y rendre !</button>
                                 </div>
 
                             </div>
