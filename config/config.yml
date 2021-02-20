@@ -2,7 +2,8 @@
 Main:
     theme:
         couleurs:
-            main-color-bg: '#e6e6e6'
+            fade-bg1: '#c6cdd2'
+            fade-bg2: '#b8dcff'
             secondary-color-bg: '#43b9f4'
             base-color: '#343c65'
             main-color: '#8b6bff'
@@ -12,7 +13,9 @@ Main:
             bonus1: '#009ffd'
             bonus2: '#06d6a0'
             txtnav: '#ffffff'
+            boutiquestockclr: '#6a1fdb'
         informations:
+            opacitybg: null
             img1: https://images.sky-dream.fr/upload-img-site/tokens-16000.png
             titre1: Achetez mes tokens!
             desc1: Achetez mes beaux tokens....
@@ -34,7 +37,8 @@ Main:
         police: "'Poppins', sans-serif;"
         shadowheader: null
         couleurshadowheader: '#292929'
-        logo: 'https://images.sky-dream.fr/upload-img-gfx/NO%20LETTERS.png'
+        logo: >
+            https://images.sky-dream.fr/upload-img-gfx/flat_theme_logo.png
         logo-l: 300px
         logo-h: 310px
         discord-id: "557178315471978515"

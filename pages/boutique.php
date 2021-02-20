@@ -66,7 +66,7 @@ require_once "theme/Flat/header.php";
                                                             if ($offresTableau[$i]['nbre_vente'] == 0) {
                                                                 echo "vide";
                                                             } else {
-                                                                echo ($offresTableau[$i]['nbre_vente'] == -1) ? '<h6 style="color: red">Stock Non limité</h6>' : '<h6 style="color: red">Stock : </h6>' . $offresTableau[$i]['nbre_vente'];
+                                                                echo ($offresTableau[$i]['nbre_vente'] == -1) ? '<h6 style="color: var(--boutiquestockclr)">Stock Non limité</h6>' : '<h6 style="color: red">Stock : </h6>' . $offresTableau[$i]['nbre_vente'];
                                                             }
                                                             ?>
                                                         </small>

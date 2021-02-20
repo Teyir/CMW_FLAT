@@ -151,10 +151,12 @@ $_Theme_ = $_Theme_->GetTableau();
             </div>
         </div>
         <div class="footer-bottom row align-items-center text-center text-lg-left no-gutters">
+
+
             <p class="footer-text m-0 col-lg-8 col-md-12">
-                © Tous droits réservés <strong><?= $_Serveur_['General']['name']; ?></strong> </p>
+                © Tous droits réservés <strong class="copyright-srvname"><?= $_Serveur_['General']['name']; ?></strong> </p>
             <p>
-                Thème créé with <i class="fa fa-heart" aria-hidden="true" style="color: #d61d4c"></i> par <a href="https://teyir.fr" target="_blank">Teyir </a> pour <small><a href="https://craftmywebsite.fr" target="_blank">CraftMyWebsite.fr</a>#<?= $versioncms; ?></small>
+                Thème créé with <i class="fa fa-heart" aria-hidden="true" style="color: #d61d4c"></i> par <a href="https://teyir.fr" class="Blazing fire" target="_blank" style="color: whitesmoke">Teyir </a> pour <small><a href="https://craftmywebsite.fr" target="_blank">CraftMyWebsite.fr</a>#<?= $versioncms; ?></small>
             </p>
 
         </div>

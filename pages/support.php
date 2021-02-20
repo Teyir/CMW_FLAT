@@ -71,16 +71,23 @@
 
             <?php endif; ?>
         </div>
+
+
+
+
+
+
         <!-- Afficher les tickets  -->
         <div style="display:inline-block;">
             <h4>Tickets créés </h4>
             <hr class="my-6"  style="max-width: 65px"/>
         </div>
-        <table class="table table-striped mt-4">
+
+        <table class="table table-hover table-responsive mb-0 mt-4">
             <thead>
             <tr>
                 <?php if (Permission::getInstance()->verifPerm('PermsDefault', 'support', 'displayTicket')) : ?>
-                    <th scope="col" class="support_txt"><i class="fas fa-eye"></i> Visibilité</th>
+                    <th scope="row" class="support_txt"><i class="fas fa-eye"></i> Visibilité</th>
                 <?php endif; ?>
                 <th scope="col" class="support_txt"><i class="fas fa-user"></i> Pseudo</th>
                 <th scope="col" class="support_txt"><i class="fas fa-heading"></i> Titre</th>
@@ -100,14 +107,14 @@
             <tr class="no-hover">
                 <?php if ($tickets['ticketDisplay'] == 0 or $tickets['auteur'] == $_Joueur_['pseudo'] or Permission::getInstance()->verifPerm('PermsDefault', 'support', 'displayTicket')) :
                     if (Permission::getInstance()->verifPerm('PermsDefault', 'support', 'displayTicket')) : ?>
-                        <td class="text-center align-middle">
+                        <th scope="row" class="text-center align-middle">
                             <?php if ($tickets['ticketDisplay'] == "0") : ?>
 
                                 <i data-toggle="tooltip" data-html="true" title="Ce ticket est <u>public</u>" class="fas fa-eye"></i>
                             <?php else : ?>
                                 <i data-toggle="tooltip" data-html="true" title="Ce ticket est <u>privé</u>" class="fas fa-eye-slashed"></i>
                             <?php endif; ?>
-                        </td>
+                        </th>
                     <?php endif; ?>
 
                     <td class="align-middle">
@@ -280,9 +287,9 @@
 
                         <form action="?&action=post_ticket_commentaire" method="post">
                             <input type="hidden" name="id" value="<?= $tickets['id'] ?>" />
-                            <div style="width:100%;">
+                            <div style="width:100%;" class="cksupportshow">
 
-                                <textarea data-UUID="0006<?= $tickets['id'] ?>" id="ckeditorCom<?= $tickets['id'] ?>" name="message" style="height: 275px;"></textarea>
+                                <textarea name="message" class="supportcomment"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary mt-4 w-100">Commenter</button>
                         </form>

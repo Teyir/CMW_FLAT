@@ -11,7 +11,8 @@ $_Theme_ = $configTheme->GetTableau();
     <style>
 
         :root {
-            --main-color-bg: <?= $_Theme_["Main"]['theme']['couleurs']["main-color-bg"] ?> !important;
+            --fade-bg1: <?= $_Theme_["Main"]['theme']['couleurs']["fade-bg1"] ?> !important;
+            --fade-bg2: <?= $_Theme_["Main"]['theme']['couleurs']["fade-bg2"] ?> !important;
             --secondary-color-bg: <?= $_Theme_["Main"]['theme']['couleurs']["secondary-color-bg"] ?> !important;
 
             --base-color: <?= $_Theme_["Main"]['theme']['couleurs']["base-color"] ?> !important;
@@ -25,6 +26,8 @@ $_Theme_ = $configTheme->GetTableau();
             --lightest: <?= $_Theme_["Main"]['theme']['couleurs']["lightest"] ?> !important;
 
             --txtnav: <?= $_Theme_["Main"]['theme']['couleurs']["txtnav"] ?> !important;
+
+            --boutiquestockclr: <?= $_Theme_["Main"]['theme']['couleurs']["boutiquestockclr"] ?> !important;
 
             --police: <?= $_Theme_["Main"]['theme']['police'] ?> !important;
 

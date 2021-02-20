@@ -38,7 +38,8 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 // Modification couleurs du thème
 
 
-	$ecritureTheme['Main']['theme']['couleurs']['main-color-bg'] = $_POST['main-color-bg'];
+	$ecritureTheme['Main']['theme']['couleurs']['fade-bg1'] = $_POST['fade-bg1'];
+	$ecritureTheme['Main']['theme']['couleurs']['fade-bg2'] = $_POST['fade-bg2'];
 	$ecritureTheme['Main']['theme']['couleurs']['secondary-color-bg'] = $_POST['secondary-color-bg'];
 	$ecritureTheme['Main']['theme']['couleurs']['base-color'] = $_POST['base-color'];
 	$ecritureTheme['Main']['theme']['couleurs']['main-color'] = $_POST['main-color'];
@@ -48,7 +49,7 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 	$ecritureTheme['Main']['theme']['couleurs']['bonus1'] = $_POST['bonus1'];
 	$ecritureTheme['Main']['theme']['couleurs']['bonus2'] = $_POST['bonus2'];
 	$ecritureTheme['Main']['theme']['couleurs']['txtnav'] = $_POST['txtnav'];
-
+	$ecritureTheme['Main']['theme']['couleurs']['boutiquestockclr'] = $_POST['boutiquestockclr'];
 
 
 
@@ -93,6 +94,8 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 
 // UPLOAD DES IMAGES INFORMATION
 
+	$ecritureTheme['Main']['theme']['informations']['opacitybg'] = $_POST['opacityinfobg'];
+
 	$ecritureTheme['Main']['theme']['informations']['img1'] = $_POST['img1'];
 	$ecritureTheme['Main']['theme']['informations']['titre1'] = $_POST['titre1'];
 	$ecritureTheme['Main']['theme']['informations']['desc1'] = $_POST['desc1'];
@@ -113,6 +116,7 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 	$ecritureTheme['Main']['theme']['informations']['couleurtitre3'] = $_POST['couleurtitre3'];
 	$ecritureTheme['Main']['theme']['informations']['couleurdesc3'] = $_POST['couleurdesc3'];
 	$ecritureTheme['Main']['theme']['informations']['couleurback3'] = $_POST['couleurback3'];
+
 
 
 

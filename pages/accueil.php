@@ -50,7 +50,7 @@ $DiscordOnline = $obj->presence_count;
                             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                 <rect id="shape" height="40" width="150" />
                                 <div id="text">
-                                    <button onclick="copierDiscord();" type="button"><span class="spot con-tooltip " >Discord <span class="tooltip">Nous sommes actuellement <strong><?= $DiscordOnline?></strong> membres connectés sur notre Discord !</span></span></button>
+                                    <button onclick="copierDiscord();" type="button"><span class="spot con-tooltip " >Discord <span class="tooltip" style="color: whitesmoke">Nous sommes actuellement <strong style="color: white"><?= $DiscordOnline?></strong> membres connectés sur notre Discord !</span></span></button>
                                     <input type="text" style="position:absolute;top:0;left:0;z-index:-9999;" id="CopieDiscord" value="<?= $_Theme_['Main']['theme']['discord-invitation']; ?>">
                                 </div>
                             </svg>
@@ -72,7 +72,7 @@ $DiscordOnline = $obj->presence_count;
         <div class="row">
             <!-- INFO 1 -->
             <div class="col-md-6 col-lg-4">
-                <div class="single-service  text-center" data-aos="fade-up" data-aos-delay="150" style="background-color: var(--couleurback1)">
+                <div class="single-service  text-center testbg123" data-aos="fade-up" data-aos-delay="150" style="<?php if ($_Theme_['Main']['theme']['informations']['opacitybg'] == null){echo "background-color: var(--couleurback1); border: none;";} else{echo "background-color: transparent; border: none";} ?>">
                     <div class="service-icon" style=" background: url('<?= $_Theme_['Main']['theme']['informations']['img1'] ?>'); background-position: center center; background-repeat: no-repeat">
 
                     </div>
@@ -85,7 +85,7 @@ $DiscordOnline = $obj->presence_count;
 
             <!-- INFO 2 -->
             <div class="col-md-6 col-lg-4">
-                <div class="single-service text-center" data-aos="fade-up" style="background-color: var(--couleurback2)">
+                <div class="single-service text-center" data-aos="fade-up" style="<?php if ($_Theme_['Main']['theme']['informations']['opacitybg'] == null){echo "background-color: var(--couleurback2); border: none;";} else{echo "background-color: transparent; border: none";} ?>">
                     <div class="service-icon" style=" background: url('<?= $_Theme_['Main']['theme']['informations']['img2'] ?>'); background-position: center center; background-repeat: no-repeat">
 
                     </div>
@@ -99,7 +99,7 @@ $DiscordOnline = $obj->presence_count;
 
             <!-- INFO 3 -->
             <div class="col-md-6 col-lg-4">
-                <div class="single-service text-center" data-aos="fade-up" data-aos-delay="250" style="background-color: var(--couleurback3)">
+                <div class="single-service text-center" data-aos="fade-up" data-aos-delay="250" style="<?php if ($_Theme_['Main']['theme']['informations']['opacitybg'] == null){echo "background-color: var(--couleurback3); border: none;";} else{echo "background-color: transparent; border: none";} ?>">
                     <div class="service-icon" style=" background: url('<?= $_Theme_['Main']['theme']['informations']['img3'] ?>'); background-position: center center; background-repeat: no-repeat">
 
                     </div>
@@ -187,19 +187,24 @@ $DiscordOnline = $obj->presence_count;
                 <iframe style="margin-left: 77px" data-aos="fade-left" src="https://discord.com/widget?id=<?=$_Theme_['Main']['theme']['discord-id']?>&theme=dark" width="220" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
             <?php } ?>
         <?php for ($i = 1; $i < count($lectureAccueil['Infos']) + 1; $i++) : ?>
+
                     <article class="col-12 info-content" data-aos="fade-left">
+
                         <div class="miniature-card-4 text-center">
                             <img src="theme/upload/navRap/<?= $lectureAccueil['Infos'][$i]['image'] ?>" alt="Image <?= $i ?>" class="img img-responsive">
+
                             <div class="miniature-content">
                                 <div class="miniature-description"><?= $lectureAccueil['Infos'][$i]['message']; ?></div>
 
                                 <div class="card-footer">
                                     <button type="button" href="<?= $lectureAccueil['Infos'][$i]['lien']; ?>" class="btn btn-min" style="background-color: #65ffdc">S'y rendre !</button>
                                 </div>
+
                             </div>
 
                         </div>
                     </article>
+
                 <?php endfor; ?>
             </div>
 

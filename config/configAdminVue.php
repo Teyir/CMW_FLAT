@@ -1,6 +1,7 @@
 <?php include('theme/' . $_Serveur_['General']['theme'] . '/config/configTheme.php');
 ?>
 
+
 <!-- ATTENTION AUX DEVELOPPEURS DE THEME :
         -> Le système est concue pour qu'il n'y est qu'un seul FORM, et c'est celui de cette action ! Donc merci de ne pas créer d'autres form et de tout garder dans ce form avec cette action et en POST !
         -> Le fichier de traitement est configAdminTraitement.php il ne peux ni être renommer ni déplacé !
@@ -81,7 +82,8 @@
                                                 <table class="table table-responsive table-striped table-hover">
                                                     <thead>
                                                     <th></th>
-                                                    <th>Fond principal</th>
+                                                    <th>Dégadré background 1</th>
+                                                    <th>Dégadré background 2</th>
                                                     <th>Fond secondaire</th>
                                                     <th>Couleur du texte</th>
                                                     <th>Couleur foncée du texte</th>
@@ -91,6 +93,7 @@
                                                     <th>Bonus 1</th>
                                                     <th>Bonus 2</th>
                                                     <th>Couleur texte navbar</th>
+                                                    <th>Couleur stock boutique</th>
                                                     </thead>
                                                     <tbody>
                                                     <tr>
@@ -98,7 +101,11 @@
 
 
                                                         <td class="text-center">
-                                                            <input type="color" id="selColor" name="main-color-bg" value="<?php echo $_Theme_['Main']['theme']['couleurs']['main-color-bg']; ?>">
+                                                            <input type="color" id="selColor" name="fade-bg1" value="<?php echo $_Theme_['Main']['theme']['couleurs']['fade-bg1']; ?>">
+                                                        </td>
+
+                                                        <td class="text-center">
+                                                            <input type="color" id="selColor" name="fade-bg2" value="<?php echo $_Theme_['Main']['theme']['couleurs']['fade-bg2']; ?>">
                                                         </td>
 
                                                         <td class="text-center">
@@ -137,6 +144,10 @@
                                                             <input type="color" id="selColor" name="txtnav" value="<?php echo $_Theme_['Main']['theme']['couleurs']['txtnav']; ?>">
                                                         </td>
 
+                                                        <td class="text-center">
+                                                            <input type="color" id="selColor" name="boutiquestockclr" value="<?php echo $_Theme_['Main']['theme']['couleurs']['boutiquestockclr']; ?>">
+                                                        </td>
+
 
 
 
@@ -148,7 +159,13 @@
 
 
                                                         <td class="text-center p-0">
-                                                            <div style="background-color: <?php echo $_Theme_['Main']['theme']['couleurs']['main-color-bg']; ?>; width: 100%; padding: 0.75rem">
+                                                            <div style="background-color: <?php echo $_Theme_['Main']['theme']['couleurs']['fade-bg1']; ?>; width: 100%; padding: 0.75rem">
+                                                                &nbsp;
+                                                            </div>
+                                                        </td>
+
+                                                        <td class="text-center p-0">
+                                                            <div style="background-color: <?php echo $_Theme_['Main']['theme']['couleurs']['fade-bg2']; ?>; width: 100%; padding: 0.75rem">
                                                                 &nbsp;
                                                             </div>
                                                         </td>
@@ -208,10 +225,17 @@
                                                             </div>
                                                         </td>
 
+                                                        <td class="text-center p-0">
+                                                            <div style="background-color: <?php echo $_Theme_['Main']['theme']['couleurs']['boutiquestockclr']; ?>; width: 100%; padding: 0.75rem">
+                                                                &nbsp;
+                                                            </div>
+                                                        </td>
+
 
 
 
                                                     </tr>
+
                                                     </tbody>
                                                 </table>
 
@@ -449,6 +473,11 @@
 
                                         <h4>Modification de la partie "informations"</h4>
 
+                                        <div class="custom-control custom-switch" style="margin-top: 20px; margin-bottom: 20px">
+                                            <input type="checkbox" class="custom-control-input" id="opacityinfobg" name="opacityinfobg" <?php if ($_Theme_['Main']['theme']['informations']['opacitybg'] == null){} else{echo "checked";} ?>>
+                                            <label class="custom-control-label" for="opacityinfobg">Activer la transparence des fonds </label><br>
+                                        </div>
+
 
                                         <div class="col-12">
                                             <div class="row">
@@ -496,6 +525,8 @@
 
                                                     <label class="control-label" for="couleurback2">Couleur du fond </label>
                                                     <input type="color" id="couleurback2" name="couleurback2" value="<?php echo $_Theme_['Main']['theme']['informations']['couleurback2']; ?>">
+
+
                                                 </div>
 
                                                 <div class="col-6">

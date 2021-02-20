@@ -59,7 +59,7 @@ $fofo = $_Forum_->affichageForum();
             <?php for ($i = 0; $i < count($fofo); $i++) :
                 if (((Permission::getInstance()->verifPerm('PermsDefault', 'forum', 'perms') >= $fofo[$i]['perms'] or Permission::getInstance()->verifPerm("createur")) and !$_SESSION['mode']) or $fofo[$i]['perms'] == 0) : ?>
 
-                    <table class="table table-dark table-striped">
+                    <table class="table table-hover table-responsive mb-0">
 
                         <!-- Edition du forum -->
                         <div class="row ml-auto" style="margin-top: 20px; margin-bottom: 20px">
