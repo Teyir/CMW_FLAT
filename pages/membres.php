@@ -34,7 +34,7 @@ if (isset($_GET['page_membre'])) {
         <div class="row">
             <!-- Liste des Membres  -->
             <div class="col-md-12 col-lg9 col-sm-12">
-                <table class="table table-dark table-striped table-hover liste-membres">
+                <table class="table table-light table-striped table-hover liste-membres">
                     <caption> Nombre de joueurs : <?= count($membres); ?> </caption>
                     <thead>
                     <tr>

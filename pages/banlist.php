@@ -38,7 +38,7 @@ if (count($jsonCon) > 0) {
                     <div class="tab-content">
                         <?php for ($i = 0; $i < count($jsonCon); $i++) : ?>
                             <div id="server-<?= $i ?>" class="tab-pane fade <?php if ($i == 0) echo 'in active show'; ?>" aria-expanded="false">
-                                <table class="table table-dark table-striped table-hover">
+                                <table class="table table-light table-striped table-hover">
                                     <thead>
                                     <tr>
                                         <th>Pseudo</th>

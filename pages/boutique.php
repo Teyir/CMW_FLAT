@@ -136,6 +136,10 @@ require_once "theme/Flat/header.php";
                             <a href="<?= $_Panier_->compterArticle() > 0 ? '?page=panier' : '#' ?>" class="btn btn-primary btn-block btn-sm rounded">
                                 Panier : <?= $_Panier_->compterArticle() . ($_Panier_->compterArticle() > 1 ? ' articles' : ' article') ?>
                             </a>
+
+                            <a href="?page=token" class="btn btn-primary btn-block btn-sm rounded">
+                                Recharger mes crédits
+                            </a>
                         <?php else : ?>
                         <div class="player-shop-person h5 mb-2">
                             Bonjour Visiteur,

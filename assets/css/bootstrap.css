@@ -27,7 +27,12 @@
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
     --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    --lightest: #007bff;
+    --darkest: #0069d9;
+
+    --secondary-color-bg: #445e8d;
 }
 
 *,
@@ -2458,14 +2463,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff
+    background-color: var(--lightest);
+    border-color: var(--darkest);
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc
+    background-color: var(--darkest);
+    border-color: var(--lightest);
 }
 
 .btn-primary.focus,
@@ -6333,14 +6338,14 @@ button.close {
 }
 
 .bg-primary {
-    background-color: #007bff !important
+    background-color: var(--secondary-color-bg) !important
 }
 
 a.bg-primary:focus,
 a.bg-primary:hover,
 button.bg-primary:focus,
 button.bg-primary:hover {
-    background-color: #0062cc !important
+    background-color: var(--lightest) !important
 }
 
 .bg-secondary {

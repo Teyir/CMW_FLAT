@@ -1,20 +1,14 @@
-<?php
+<div class="header_banner" style="margin-top: -25px">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay" style="background: url('theme/upload/bg.png')
+            no-repeat scroll center center; background-size: cover; max-height: 150px; margin-top: 0"></div>
+    </div>
+</div>
 
-require_once "theme/Flat/header.php";
 
-?>
 <section id="Token">
     <div class="container-fluid col-md-9 col-lg-9 col-sm-10">
 
-        <div class="row">
-            <!-- Présentation -->
-            <div class="d-flex col-12 info-page">
-                <i class="fas fa-info-circle notification-icon"></i>
-                <div class="info-content">
-Transformez votre argent en crédit afin d'effectuer vos achats tranquillement !
-                </div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-md-12 col-lg-3 col-sm-12 mb-3">
                 <!-- Moyens de Paiement -->
@@ -29,7 +23,7 @@ Transformez votre argent en crédit afin d'effectuer vos achats tranquillement !
                                 <!-- Paypal -->
                                 <li class="categorie-item nav-item">
                                     <a href="#buy-paypal" class="nav-link categorie-link active" data-toggle="tab">
-                                        Payer avec Paypal
+                                        <i class="fab fa-paypal"></i>  Payer avec Paypal
                                     </a>
                                 </li>
                             <?php endif; ?>
@@ -37,7 +31,7 @@ Transformez votre argent en crédit afin d'effectuer vos achats tranquillement !
                                 <!-- Dedipass -->
                                 <li class="categorie-item nav-item">
                                     <a href="#buy-dedipass" class="nav-link categorie-link" data-toggle="tab">
-                                        Payer avec Dedipass
+                                        <i class="fas fa-phone-square-alt"></i> Payer avec Dedipass
                                     </a>
                                 </li>
                             <?php endif; ?>
@@ -45,7 +39,7 @@ Transformez votre argent en crédit afin d'effectuer vos achats tranquillement !
                                 <!-- PaySafeCard -->
                                 <li class="categorie-item nav-item">
                                     <a href="#buy-paysafecard" class="nav-link categorie-link" data-toggle="tab">
-                                        Payer avec PaySafeCard
+                                        <i class="fas fa-sd-card"></i> Payer avec PaySafeCard
                                     </a>
                                 </li>
                             <?php endif; ?>
@@ -68,8 +62,8 @@ Transformez votre argent en crédit afin d'effectuer vos achats tranquillement !
                     <?php if ($_Serveur_['Payement']['paypal']) : ?>
                         <div class="tab-pane fade show active" id="buy-paypal">
                             <div class="info-page">
-                                <div class="text-center">
-                                    <h5>Payer par Paypal :</h5>
+                                <div class="text-center jumbotron">
+                                    <h5><i class="fab fa-paypal"></i> Payer par Paypal :</h5>
                                     <h6>Payer par paypal avec votre solde ou par carte bancaire tout en étant en pleine sécurité !</h6>
                                 </div>
                             </div>
@@ -81,7 +75,7 @@ Transformez votre argent en crédit afin d'effectuer vos achats tranquillement !
                                             <div class="card">
                                                 <div class="card-header">
                                                     <h5 class="titre-offre">
-                                                        <?= $tab['nom']; ?> <span class="float-right badge badge-main"><?= $tab['prix']; ?>€</span>
+                                                        <?= $tab['nom']; ?> <span class="float-right badge badge-success"><?= $tab['prix']; ?>€</span>
                                                     </h5>
                                                 </div>
                                                 <div class="card-body">
@@ -111,8 +105,8 @@ Transformez votre argent en crédit afin d'effectuer vos achats tranquillement !
                         <!-- Affichage de la page dedipass -->
                         <div class="tab-pane fade" id="buy-dedipass">
                             <div class="info-page">
-                                <div class="text-center">
-                                    <h5>Payer par Dedipass :</h5>
+                                <div class="text-center jumbotron">
+                                    <h5><i class="fas fa-phone-square-alt"></i> Payer par Dedipass :</h5>
                                     <h6>Payer par Dedipass avec votre forfait téléphonique tout en simplicité !</h6>
                                 </div>
                             </div>
@@ -135,8 +129,8 @@ Transformez votre argent en crédit afin d'effectuer vos achats tranquillement !
                         <!-- Affichage des offres PSC -->
                         <div class="tab-pane fade" id="buy-paysafecard">
                             <div class="info-page">
-                                <div class="text-center">
-                                    <h5>Payer par PaySafeCard :</h5>
+                                <div class="text-center jumbotron">
+                                    <h5><i class="fas fa-sd-card"></i> Payer par PaySafeCard :</h5>
                                     <h6>Payer avec PaySafeCard en toute simplicité</h6>
                                 </div>
                             </div>

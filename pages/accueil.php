@@ -44,8 +44,8 @@ $DiscordOnline = $obj->presence_count;
                                     <input type="text" style="position:absolute;top:0;left:0;z-index:-9999;" id="iptexte" value="<?= $_Serveur_['General']['ipTexte']; ?>">
                                 </div>
                             </svg>
-
                         </div>
+
                         <div class="svg-wrapper">
                             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                                 <rect id="shape" height="40" width="150" />
@@ -55,7 +55,6 @@ $DiscordOnline = $obj->presence_count;
                                 </div>
                             </svg>
                         </div>
-
 
                     </div>
                 </div>
@@ -137,14 +136,14 @@ $DiscordOnline = $obj->presence_count;
 
                             <article class="col-md-12 col-lg-12 col-sm-12 news-content" data-aos="fade-up">
                                 <div class="card">
-                                    <div class="card-header d-flex flex-nowrap">
+                                    <div class="card-header d-flex flex-nowrap"<?php if ($_Theme_['Main']['theme']['style-news'] == 2) {echo "style='background-color: var(--secondary-color-bg)'";} elseif ($_Theme_['Main']['theme']['style-news'] == 3){echo "style='background-color: var(--secondary-color-bg)'";} else {}?>>
                                         <h4 style="color: var(--main-color);"><small>#<?= $news[$i]['id'] ?> </small><?= $news[$i]['titre']; ?></h4>
                                         <h6 class="ml-auto"><?= date('d/m/Y', $news[$i]['date']) . " &agrave; " . date('H:i:s', $news[$i]['date']) ?></h6>
                                     </div>
                                     <div class="card-body">
                                         <?= $news[$i]['message']; ?>
                                     </div>
-                                    <div class="card-footer d-flex">
+                                    <div class="card-footer d-flex" <?php if ($_Theme_['Main']['theme']['style-news'] == 1) {echo "style='background-color: var(--secondary-color-bg)'";} elseif ($_Theme_['Main']['theme']['style-news'] == 3){echo "style='background-color: var(--secondary-color-bg)'";} else {}?>>
                                         <h3 style="color: var(--base-color);font-size: 17px">Par <a href="?page=profil&profil=<?= $news[$i]['auteur']; ?>"><?= $news[$i]['auteur']; ?></a></h3>
                                         <div class="ml-auto">
                                             <?php
@@ -185,7 +184,7 @@ $DiscordOnline = $obj->presence_count;
 
             <?php if ($_Theme_['Main']['theme']['discord-widget'] == null){} else{ ?>
 
-                        <iframe class="mx-auto" data-aos="fade-left" src="https://discord.com/widget?id=<?=$_Theme_['Main']['theme']['discord-id']?>&theme=dark" width="220" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                        <iframe class="mx-auto" data-aos="fade-left" src="https://discord.com/widget?id=<?=$_Theme_['Main']['theme']['discord-id']?>&theme=dark" width="<?=$_Theme_['Main']['theme']['discord-widget-l']?>" height="<?=$_Theme_['Main']['theme']['discord-widget-h']?>" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
                         <?php } ?>
 
@@ -200,7 +199,7 @@ $DiscordOnline = $obj->presence_count;
                                 <div class="miniature-description"><?= $lectureAccueil['Infos'][$i]['message']; ?></div>
 
                                 <div class="card-footer">
-                                    <button type="button" onclick="window.location.href='<?= $lectureAccueil['Infos'][$i]['lien']; ?>'"  class="btn btn-min" style="background-color: #65ffdc">S'y rendre !</button>
+                                    <button type="button" onclick="window.location.href='<?= $lectureAccueil['Infos'][$i]['lien']; ?>'"  class="btn btn-min btn-primary">S'y rendre !</button>
                                 </div>
 
                             </div>

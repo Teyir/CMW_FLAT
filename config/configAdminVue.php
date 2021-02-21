@@ -88,8 +88,8 @@
                                                     <th>Couleur du texte</th>
                                                     <th>Couleur foncée du texte</th>
                                                     <th>Couleur importante du texte</th>
-                                                    <th>Fond clair</th>
-                                                    <th>Fond foncé</th>
+                                                    <th>Background bouttons</th>
+                                                    <th>Background bouttons 2</th>
                                                     <th>Bonus 1</th>
                                                     <th>Bonus 2</th>
                                                     <th>Couleur texte navbar</th>
@@ -306,6 +306,21 @@
                                             </div>
                                         </div>
 
+                                        <label class="control-label" for="style-news">Style des news </label>
+                                        <select class="form-control text-center" name="style-news">
+                                            <option value="<?= $_Theme_['Main']['theme']['style-news'] ?>" selected ><?= $_Theme_['Main']['theme']['style-news'] ?></option>
+
+
+                                            <option value="1">1</option>
+
+
+                                            <option value="2">2</option>
+
+                                            <option value="3">3</option>
+
+
+                                        </select>
+
 
                                     </div>
 
@@ -450,6 +465,16 @@
                                                     <span class="input-group-text" id="inputGroup-sizing-sm">Invitation Discord</span>
                                                 </div>
                                                 <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" class="form-control" placeholder="Liens d'invitation de votre serveur Discord" id="discord-invitation" name="discord-invitation" value="<?= $_Theme_['Main']['theme']['discord-invitation'] ?>">
+
+                                            </div>
+
+                                            <div class="col-6">
+
+                                                <label class="control-label" for="discord-widget-h">Hauteur Widget Discord </label>
+                                                <input class="form-control" type="number" name="discord-widget-h" id="discord-widget-h" value="<?= $_Theme_['Main']['theme']['discord-widget-h'] ?>" placeholder="250">
+
+                                                <label class="control-label" for="discord-widget-l">Largeur Widget Discord </label>
+                                                <input class="form-control" type="number" name="discord-widget-l" id="discord-widget-l" value="<?= $_Theme_['Main']['theme']['discord-widget-l'] ?>" placeholder="500">
 
                                             </div>
 

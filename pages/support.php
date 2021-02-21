@@ -74,17 +74,14 @@
 
 
 
-
-
-
         <!-- Afficher les tickets  -->
         <div style="display:inline-block;">
             <h4>Tickets créés </h4>
             <hr class="my-6"  style="max-width: 65px"/>
         </div>
 
-        <table class="table table-hover table-responsive mb-0 mt-4">
-            <thead>
+        <table class="table table-hover table-responsive mb-0 mt-4 text-center">
+            <thead class="thead-light">
             <tr>
                 <?php if (Permission::getInstance()->verifPerm('PermsDefault', 'support', 'displayTicket')) : ?>
                     <th scope="row" class="support_txt"><i class="fas fa-eye"></i> Visibilité</th>
@@ -304,7 +301,7 @@
 
                 </div>
             </div>
-    </div>
+        </div>
     </div>
 
     <?php endif; ?>

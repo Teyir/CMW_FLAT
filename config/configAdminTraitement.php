@@ -80,12 +80,19 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 
 	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
 
+// Style des news
+	$ecritureTheme['Main']['theme']['style-news'] = $_POST['style-news'];
+
+	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
 
 // Ajouts du nombre de connectés au serveur Discord
 
 	$ecritureTheme['Main']['theme']['discord-id'] = $_POST['discord-id'];
 	$ecritureTheme['Main']['theme']['discord-invitation'] = $_POST['discord-invitation'];
 	$ecritureTheme['Main']['theme']['discord-widget'] = $_POST['discord-widget'];
+
+	$ecritureTheme['Main']['theme']['discord-widget-l'] = $_POST['discord-widget-l'];
+	$ecritureTheme['Main']['theme']['discord-widget-h'] = $_POST['discord-widget-h'];
 
 	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
 

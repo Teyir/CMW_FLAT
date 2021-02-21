@@ -480,6 +480,11 @@ progress {
     text-shadow: white 2px 0 3px;
 }
 
+#Token{
+    margin-top: 36px;
+    margin-bottom: 35px;
+}
+
 /* SUPPORT */
 
 .hm-gradient {
@@ -3760,13 +3765,8 @@ h6 {
     padding: 50px 15px 25px 15px;
 }
 
-.card-footer{
-    background-color: var(--secondary-color-bg);
-}
 
-.footer_logo:hover{
 
-}
 
 .footer_txt{
     line-height: 9px;
