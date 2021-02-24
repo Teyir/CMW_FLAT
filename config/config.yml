@@ -47,6 +47,13 @@ Main:
         discord-widget-h: "500"
         discord-widget-l: "250"
         style-news: "1"
+        launcher-mode: 'on'
+        launcher-image: >
+            https://minecraft.fr/wp-content/uploads/2019/06/nouveau-launcher-minecraft-1200x640.png
+        launcher-description: |
+            Ceci est une description pour un launcher Minecraft, elle est vraiment longue car mon serveur est super et j'ai pleins de choses à dire.
+            J'ai très bon goût car j'utilise le thème Flat !
+        launcher-liens:
 Pied:
     couleurbg: '#383838'
     couleurtxt: '#d2cbcb'

@@ -125,8 +125,15 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 	$ecritureTheme['Main']['theme']['informations']['couleurback3'] = $_POST['couleurback3'];
 
 
+	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
 
 
+	// Partie LAUNCHER
+
+	$ecritureTheme['Main']['theme']['launcher-mode'] = $_POST['launcher-mode'];
+	$ecritureTheme['Main']['theme']['launcher-image'] = $_POST['launcher-image'];
+	$ecritureTheme['Main']['theme']['launcher-liens'] = $_POST['launcher-liens'];
+	$ecritureTheme['Main']['theme']['launcher-description'] = $_POST['launcher-description'];
 
 	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
 

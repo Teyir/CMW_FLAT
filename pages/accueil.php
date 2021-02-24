@@ -36,6 +36,7 @@ $DiscordOnline = $obj->presence_count;
                         <hr/>
                         <h5 class="description_header" style="<?php if ($_Theme_['Main']['theme']['shadowheader'] == null){} else{echo "text-shadow: var(--couleurshadowheader) 3px 0 10px";} ?>"><?= $_Serveur_['General']['description']; ?></h5>
 
+                        <?php if ($_Theme_['Main']['theme']['launcher-mode'] == null){ ?>
                         <div class="svg-wrapper1">
                             <svg height="40" width="220" >
                                 <rect id="shape1" height="40" width="220" />
@@ -45,6 +46,17 @@ $DiscordOnline = $obj->presence_count;
                                 </div>
                             </svg>
                         </div>
+                        <?php }else{?>
+                            <div class="svg-wrapper1">
+                                <svg height="40" width="220" >
+                                    <rect id="shape1" height="40" width="220" />
+                                    <div id="text">
+                                        <a href="#launcher" style="color: var(--base-color)"><span class="spot"></span>Télécharger notre launcher</a>
+                                    </div>
+                                </svg>
+                            </div>
+                        <?php }?>
+
 
                         <div class="svg-wrapper">
                             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +125,26 @@ $DiscordOnline = $obj->presence_count;
     </div>
 </section>
 
+<?php if ($_Theme_['Main']['theme']['launcher-mode'] == null){}else{ ?>
 
+<!-- SECTION LAUNCHER -->
+<section class="launcher-area area-padding" id="launcher">
+    <div class="container" data-aos="zoom-in-up">
+
+        <h1 class="text-center">Notre Launcher</h1>
+
+            <div class="jumbotron" style="background-color: transparent">
+
+                <img class="mx-auto d-block" src="<?= $_Theme_['Main']['theme']['launcher-image'] ?>" style="" alt="Launcher de <?= $_Serveur_['General']['name']; ?>">
+
+                <p class="lead text-center"  style="margin-top: 30px"><?= $_Theme_['Main']['theme']['launcher-description'] ?></p>
+                <p class="text-center" style="margin-top: 45px"><a class="btn btn-lg btn-primary" href="<?= $_Theme_['Main']['theme']['launcher-liens']?>" role="button">Télécharger notre launcher !</a></p>
+
+            </div>
+
+    </div>
+</section>
+<?php }?>
 
 <section id="News">
     <div class="container-fluid col-md-12 col-lg-9 col-sm-10">

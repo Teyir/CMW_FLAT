@@ -63,6 +63,11 @@
                                     <a class="nav-link" id="informationsEdition-tab" data-toggle="tab" href="#informationsEdition" role="tab" aria-controls="informationsEdition" aria-selected="false">Partie informations</a>
                                 </li>
 
+                                <li class="nav-item">
+                                    <a class="nav-link" id="launcherEdition-tab" data-toggle="tab" href="#launcherEdition" role="tab" aria-controls="launcherEdition" aria-selected="false">Launcher</a>
+                                </li>
+
+
                             </ul>
 
                             <div class="tab-content" id="defaultThemeContent">
@@ -576,18 +581,42 @@
                                                     <input type="color" id="couleurback3" name="couleurback3" value="<?php echo $_Theme_['Main']['theme']['informations']['couleurback3']; ?>">
 
                                                 </div>
-
                                             </div>
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div class="tab-pane fade mx-auto" id="launcherEdition" role="tabpanel" aria-labelledby="launcherEdition-tab">
+
+                                    <div class="col-11 mx-auto my-2">
+
+                                        <h4>Paramètres launcher :</h4>
+
+
+
+                                        <div class="custom-control custom-switch" style="margin-top: 20px">
+                                            <input type="checkbox" class="custom-control-input" id="launcher-mode" name="launcher-mode" <?php if ($_Theme_['Main']['theme']['launcher-mode'] == null){} else{echo "checked";} ?>>
+                                            <label class="custom-control-label" for="launcher-mode">Activer ou non le mode launcher </label><br>
+                                        </div>
+
+                                        <label class="control-label" for="launcher-image">Image du Launcher </label>
+                                        <input class="form-control" type="url" name="launcher-image" id="launcher-image" value="<?= $_Theme_['Main']['theme']['launcher-image'] ?>" placeholder="Entrer le liens de votre image">
+
+                                        <label class="control-label" for="launcher-liens">Liens de téléchargement du Launcher </label>
+                                        <input class="form-control" type="url" name="launcher-liens" id="launcher-liens" value="<?= $_Theme_['Main']['theme']['launcher-liens'] ?>" placeholder="Entrer le liens de téléchargement de votre launcher">
+
+                                        <label class="control-label" for="launcher-description">Description du Launcher </label>
+                                        <textarea class="form-control" name="launcher-description" id="launcher-description"><?= $_Theme_['Main']['theme']['launcher-description'] ?></textarea>
+
 
 
 
 
                                     </div>
-
                                 </div>
 
 
-                            </div>
+
                         </div>
                     </div>
 
