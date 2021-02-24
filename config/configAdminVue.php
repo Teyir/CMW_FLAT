@@ -1,4 +1,10 @@
-<?php include('theme/' . $_Serveur_['General']['theme'] . '/config/configTheme.php');
+<?php
+include('theme/' . $_Serveur_['General']['theme'] . '/config/configTheme.php');
+
+// Récupération version du thème
+$flatversion_remote = file_get_contents("https://teyir.fr/cmw/api/flat_version.txt");
+$flateversion_locale = $_Theme_['version'];
+
 ?>
 
 
@@ -42,13 +48,16 @@
                             <ul class="nav nav-tabs mb-3" id="defaultTheme" role="tablist">
 
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="colorsEdition-tab" data-toggle="tab" href="#colorsEdition" role="tab" aria-controls="colorsEdition" aria-selected="true">Couleurs</a>
+                                    <a class="nav-link active" id="infothemeEdition-tab" data-toggle="tab" href="#infothemeEdition" role="tab" aria-controls="infothemeEdition" aria-selected="true">Informations thème</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" id="colorsEdition-tab" data-toggle="tab" href="#colorsEdition" role="tab" aria-controls="colorsEdition" aria-selected="false">Couleurs</a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" id="styleEdition-tab" data-toggle="tab" href="#styleEdition" role="tab" aria-controls="styleEdition" aria-selected="false">Style</a>
                                 </li>
-
 
 
                                 <li class="nav-item">
@@ -73,7 +82,39 @@
                             <div class="tab-content" id="defaultThemeContent">
 
 
-                                <div class="tab-pane fade show active" id="colorsEdition" role="tabpanel" aria-labelledby="colorsEdition-tab">
+
+
+
+                                <div class="tab-pane fade mx-auto show active" id="infothemeEdition" role="tabpanel" aria-labelledby="infothemeEdition-tab">
+
+                                    <div class="col-11 mx-auto my-2">
+
+                                        <h4>Informations thème</h4>
+                                        <?php if ($flateversion_locale != $flatversion_remote) : ?>
+                                            <div class="alert alert-danger">
+                                                <p class="no-margin">Une mise à jour du thème est disponible, vous pouvez la télécharger <a href="https://craftmywebsite.fr/forum/index.php?resources/flat-thème-v1-0.175/history" target="_blank">ici</a><br>
+                                                    <strong>ATTENTION :</strong> En mettant à jour votre thème vous perdrez votre fichier configuration qui se situe ici <stong>"/theme/Flat/config/config.yml"</stong></p>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="alert alert-danger">
+                                            <p class="no-margin">Il est conseillé de passer le fichier "/theme/Flat/config/config.yaml" en 755 si vous avez des buggs pour la configuration du thème !</p>
+                                        </div>
+
+                                        <p><strong>Flat</strong> est un thème créé par <a href="https://teyir.fr" target="_blank">Teyir</a> pour CraftMyWbesite, le thème à pour but de vous offrir
+                                            un thème simpliste mais très customisable.</p>
+
+                                        <p>Liens du github pour report des buggs / proposer des nouveautés <a href="https://github.com/Teyir/CMW_FLAT" target="_blank">ICI</a></p>
+
+                                        <span>Version actuelle du thème: <strong>V<?= $flateversion_locale ?></strong></span>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                                <div class="tab-pane fade " id="colorsEdition" role="tabpanel" aria-labelledby="colorsEdition-tab">
 
                                     <div class="col-11 mx-auto my-2">
 
