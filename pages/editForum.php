@@ -1,7 +1,6 @@
 <?php
-
 require_once "theme/Flat/header.php";
-
+require('modele/forum/adminForum.class.php');
 
 if (Permission::getInstance()->verifPerm("connect") and isset($_GET['id'], $_GET['objet'])) :
     $AdminForum = new AdminForum($bddConnection);
@@ -24,8 +23,8 @@ if (Permission::getInstance()->verifPerm("connect") and isset($_GET['id'], $_GET
 
                         <div class="card">
 
-                            <div class="card-header">
-                                <h4 class="ml-5">Edition de votre <?= ($objet == 1) ? 'topic' : 'réponse'; ?></h4>
+                            <div class="card-header bg-primary">
+                                <h4 class="ml-0"><i class="fas fa-paragraph"></i> Edition de votre <?= ($objet == 1) ? 'topic' : 'réponse'; ?></h4>
                             </div>
 
                             <div class="card-body">
@@ -45,7 +44,7 @@ if (Permission::getInstance()->verifPerm("connect") and isset($_GET['id'], $_GET
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-main w-100">Envoyer</button>
+                            <button type="submit" class="btn btn-primary w-100">Envoyer</button>
                         </div>
                     </form>
                 </div>

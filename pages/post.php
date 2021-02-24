@@ -590,14 +590,13 @@ if (isset($_GET['id'])) :
                         </div>
 
                     <?php endfor; ?>
-                    <hr class="bg-main" />
 
                     <nav aria-label="Page Navigation Post">
                         <ul class="pagination justify-content-end">
                             <?php for ($i = 1; $i <= $count_nbrOfPages; $i++) : ?>
 
                                 <li class="page-item">
-                                    <a class="page-link" href="?&page=post&id=<?= $id; ?>&page_post=<?= $i; ?>">
+                                    <a class="page-link bg-transparent" style="border: none" href="?&page=post&id=<?= $id; ?>&page_post=<?= $i; ?>">
                                         <?= $i; ?>
                                     </a>
                                 </li>
@@ -617,7 +616,6 @@ if (isset($_GET['id'])) :
 
                     <?php elseif (isset($_Joueur_) && ($topicd['etat'] == 0 or (Permission::getInstance()->verifPerm('PermsForum', 'general', 'seeForumHide') and !$_SESSION['mode']))) : ?>
 
-                        <hr class="my-2 bg-lightest w-80" />
 
                         <div class="col-12 mx-auto">
 
