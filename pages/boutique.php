@@ -71,17 +71,17 @@ require_once "theme/Flat/header.php";
                                                             ?>
                                                         </small>
                                                     </div>
-                                                    <div class="card-body">
+                                                    <div class="card-body text-center">
                                                         <?= htmlspecialchars_decode($offresTableau[$i]['description']) ?>
                                                     </div>
                                                     <div class="card-footer text-center card_footer_shop">
                                                         <?php if (Permission::getInstance()->verifPerm("connect")) : ?>
                                                             <?php if (isset($offresTableau[$i]['buy'])) { ?>
-                                                                <a href="#" class="btn btn-primary disabled" disabled>Vous devez d'abord acheter: <?php foreach($offresTableau[$i]['buy'] as $value) { echo $offresByGet[$value]; } ?></a>
+                                                                <p class="bg-primary">Vous devez d'abord acheter: <?php foreach($offresTableau[$i]['buy'] as $value) { echo $offresByGet[$value]; } ?></p>
                                                             <?php } else if (isset($offresTableau[$i]['maxbuy'])) { ?>
-                                                                <a href="#" class="btn btn-primary disabled" disabled>Vous avez dépassé le nombre d'achat maximum de cette offre</a>
+                                                                <p class="bg-primary">Vous avez dépassé le nombre d'achat maximum de cette offre</p>
                                                             <?php } else if ($offresTableau[$i]['nbre_vente'] == 0) { ?>
-                                                                <a href="#" class="btn btn-primary disabled" disabled>Rupture de stock</a>
+                                                                <p class="bg-primary">Rupture de stock</p>
                                                             <?php } else { ?>
                                                                 <a href="?action=addOffrePanier&offre=<?= $offresTableau[$i]['id'] ?>&quantite=1" class="btn btn-primary btn-block btn-sm mb-2 btn_shop">
                                                                     <i class="fa fa-cart-arrow-down"></i> <br>Ajouter au panier

@@ -97,7 +97,7 @@ $flateversion_locale = $_Theme_['version'];
                                             </div>
                                         <?php endif; ?>
                                         <div class="alert alert-danger">
-                                            <p class="no-margin">Il est conseillé de passer le fichier "/theme/Flat/config/config.yaml" en 755 si vous avez des buggs pour la configuration du thème !</p>
+                                            <p class="no-margin">Il est conseillé de passer le fichier "/theme/Flat/config/config.yml" en 755 si vous avez des buggs pour la configuration du thème !</p>
                                         </div>
 
                                         <p><strong>Flat</strong> est un thème créé par <a href="https://teyir.fr" target="_blank">Teyir</a> pour CraftMyWbesite, le thème à pour but de vous offrir
