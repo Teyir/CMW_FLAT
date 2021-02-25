@@ -454,7 +454,6 @@ tempMess(); ?>
     <script src="theme/<?= $_Serveur_['General']['theme']; ?>/assets/js/jquery.min.js"></script>
     <script src="theme/<?= $_Serveur_['General']['theme']; ?>/assets/js/popper.min.js"></script>
     <script src="theme/<?= $_Serveur_['General']['theme']; ?>/assets/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
 
     <!-- Scripts -->
 
