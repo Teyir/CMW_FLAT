@@ -75,7 +75,7 @@ if(isset($id_sous_forum))
 
                 <h3>Les sous-Catégories de <?= $categoried['nom']; ?></h3>
 
-                <table class="table table-dark table-striped">
+                <table class="table table-light table-striped">
                     <thead>
                     <tr>
 
