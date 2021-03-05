@@ -1,5 +1,4 @@
 <?php
-//  require_once "/theme/Sublime/stats/players.php"
 // Afficher le nombre de membres Discord connectés
 
 $discordID = $_Theme_['Main']['theme']['discord-id'] ;
@@ -78,6 +77,9 @@ $DiscordOnline = $obj->presence_count;
 
 
 <!-- PARTIE INFORMATIONS -->
+
+<?php if ($_Theme_['Main']['theme']['informations']['informations-mode'] == null){}else{ ?>
+
 <section class="service-area area-padding">
     <div class="container">
         <div class="row">
@@ -124,6 +126,9 @@ $DiscordOnline = $obj->presence_count;
         </div>
     </div>
 </section>
+<?php }?>
+
+
 
 <?php if ($_Theme_['Main']['theme']['launcher-mode'] == null){}else{ ?>
 

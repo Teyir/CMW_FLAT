@@ -96,7 +96,7 @@ $flateversion_locale = $_Theme_['version'];
                                         <h4>Informations thème</h4>
                                         <?php if ($flateversion_locale != $flatversion_remote) : ?>
                                             <div class="alert alert-danger">
-                                                <p class="no-margin">Une mise à jour du thème est disponible, vous pouvez la télécharger <a href="https://craftmywebsite.fr/forum/index.php?resources/flat-thème-v1-0.175/history" target="_blank">ici</a><br>
+                                                <p class="no-margin">Une mise à jour du thème est disponible, vous pouvez la télécharger <a href="https://craftmywebsite.fr/forum/index.php?resources/flat-thème-v1-0.175/history" target="_blank">ici</a> ou <a href="https://www.spigotmc.org/resources/flat-thème-cmw-v1-8-1.89364/updates" target="_blank">ici</a><br>
                                                     <strong>ATTENTION :</strong> En mettant à jour votre thème vous perdrez votre fichier configuration qui se situe ici <stong>"/theme/Flat/config/config.yml"</stong></p>
                                             </div>
                                         <?php endif; ?>
@@ -107,9 +107,10 @@ $flateversion_locale = $_Theme_['version'];
                                         <p><strong>Flat</strong> est un thème créé par <a href="https://teyir.fr" target="_blank">Teyir</a> pour CraftMyWbesite, le thème à pour but de vous offrir
                                             un thème simpliste mais très customisable.</p>
 
-                                        <p>Liens du github pour report des buggs / proposer des nouveautés <a href="https://github.com/Teyir/CMW_FLAT" target="_blank">ICI</a></p>
+                                        <p>Liens du github pour report des buggs / proposer des nouveautés <a href="https://github.com/Teyir/CMW_FLAT/issues" target="_blank">ICI</a></p>
 
                                         <span>Version actuelle du thème: <strong>V<?= $flateversion_locale ?></strong></span>
+
                                     </div>
                                 </div>
 
@@ -559,6 +560,11 @@ $flateversion_locale = $_Theme_['version'];
                                     <div class="col-11 mx-auto my-2">
 
                                         <h4>Modification de la partie "informations"</h4>
+
+                                        <div class="custom-control custom-switch" style="margin-top: 20px; margin-bottom: 20px">
+                                            <input type="checkbox" class="custom-control-input" id="informations-mode" name="informations-mode" <?php if ($_Theme_['Main']['theme']['informations']['informations-mode'] == null){} else{echo "checked";} ?>>
+                                            <label class="custom-control-label" for="informations-mode">Activer la partie information </label><br>
+                                        </div>
 
                                         <div class="custom-control custom-switch" style="margin-top: 20px; margin-bottom: 20px">
                                             <input type="checkbox" class="custom-control-input" id="opacityinfobg" name="opacityinfobg" <?php if ($_Theme_['Main']['theme']['informations']['opacitybg'] == null){} else{echo "checked";} ?>>

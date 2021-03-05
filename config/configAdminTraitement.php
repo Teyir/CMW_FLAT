@@ -103,6 +103,7 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 
 // Partie informations:
 
+	$ecritureTheme['Main']['theme']['informations']['informations-mode'] = $_POST['informations-mode'];
 
 // UPLOAD DES IMAGES INFORMATION
 
