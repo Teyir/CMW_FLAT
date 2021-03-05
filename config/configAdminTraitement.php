@@ -85,6 +85,11 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 
 	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
 
+// Style des tables
+	$ecritureTheme['Main']['theme']['table-mode'] = $_POST['table-mode'];
+
+	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
+
 // Ajouts du nombre de connectés au serveur Discord
 
 	$ecritureTheme['Main']['theme']['discord-id'] = $_POST['discord-id'];
@@ -138,6 +143,21 @@ if(Permission::getInstance()->verifPerm('PermsPanel', 'theme', 'actions', 'editT
 	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
 
 
+	// Partie STAFF
+
+	$ecritureTheme['Main']['Staff']['staff-mode'] = $_POST['staff-mode'];
+	$ecritureTheme['Main']['Staff']['staff-style'] = $_POST['staff-style'];
+	$ecritureTheme['Main']['Staff']['staff-nombre'] = $_POST['staff-nombre'];
+
+
+	for ($numberStaff=1 ; $numberStaff < $ecritureTheme['Main']['Staff']['staff-nombre']+1 ; $numberStaff++ ) {
+		$ecritureTheme['Main']['Staff']['pseudo'.$numberStaff] = $_POST['staff-pseudo'.$numberStaff];
+		$ecritureTheme['Main']['Staff']['grade'.$numberStaff] = $_POST['staff-grade'.$numberStaff];
+	}
+
+
+
+	$ecriture = new Ecrire('theme/Flat/config/config.yml', $ecritureTheme);
 
 }
 

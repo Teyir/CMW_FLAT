@@ -11,7 +11,7 @@ $fofo = $_Forum_->affichageForum();
             <div class="info-page col-12">
                 <div class="d-flex col-12 col-sm-6 col-lg-4" style="margin:auto;">
 
-                    <div class="input-group" >
+                    <div class="input-group" style="margin-bottom: 20px">
                         <input type="text" id="search-topic" class="form-control border-0 bg-light" placeholder="Rechercher un topic ou un message" />
                         <div class="input-group-append" >
                                  <span onclick="searchForum(document.getElementById('search-topic').value, document.getElementById('all-search'), document.getElementById('table-search'),document.getElementById('title-search'))" style="border: none;" class="btn btn-link text-primary" style="cursor:pointer;"><i class="fas fa-search"></i>
@@ -23,7 +23,7 @@ $fofo = $_Forum_->affichageForum();
             </div>
         </div>
         <div class="row" style="display:none;" id="all-search">
-            <table class="table table-dark table-striped" style="display:none;">
+            <table class="table table-<?= $_Theme_['Main']['theme']['table-mode'] ?> table-striped" style="display:none;">
                 <thead>
                 <tr>
                     <th colspan="5" style="width: <?= (Permission::getInstance()->verifPerm('PermsForum', 'general', 'deleteCategorie') and !$_SESSION['mode']) ? '75%' : '100%'; ?>;">
@@ -59,7 +59,7 @@ $fofo = $_Forum_->affichageForum();
             <?php for ($i = 0; $i < count($fofo); $i++) :
                 if (((Permission::getInstance()->verifPerm('PermsDefault', 'forum', 'perms') >= $fofo[$i]['perms'] or Permission::getInstance()->verifPerm("createur")) and !$_SESSION['mode']) or $fofo[$i]['perms'] == 0) : ?>
 
-                    <table class="table table-hover table-responsive mb-0">
+                    <table class="table table-<?= $_Theme_['Main']['theme']['table-mode'] ?> table-hover table-responsive mb-0">
 
                         <!-- Edition du forum -->
                         <div class="row ml-auto" style="margin-top: 20px; margin-bottom: 20px">

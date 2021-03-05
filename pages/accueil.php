@@ -247,6 +247,34 @@ $DiscordOnline = $obj->presence_count;
     </div>
 </section>
 
+<?php if ($_Theme_['Main']['Staff']['staff-mode'] == null){}else{ ?>
+
+    <!-- SECTION STAFF -->
+    <section class="area-padding" id="staff">
+        <div class="container" data-aos="zoom-in-up">
+            <h1 class="text-center">Notre Staff</h1>
+
+                <div class="row">
+
+                <?php
+                    $staff = 1;
+                    while ($staff <= $_Theme_['Main']['Staff']['staff-nombre']) : ?>
+                        <div class="mx-auto" data-aos="fade-up" data-aos-delay="<?= $staff ?>00">
+                            <img class="mx-auto d-block"  src="https://minotar.net/<?=$_Theme_['Main']['Staff']['staff-style']?>/<?= $_Theme_['Main']['Staff']['pseudo' . $staff . ''] ?>/200.png" alt="Skin de <?= $_Theme_['Main']['Staff']['pseudo' . $staff . '']; ?>">
+                            <p class="text-center" style="margin-top: 15px"><i class="fas fa-user"></i> <strong> <?= $_Theme_['Main']['Staff']['pseudo' . $staff . ''] ?></strong></p>
+                            <p class="text-center" style="margin-top: 15px"><i class="fas fa-shield-alt"></i> <strong> <?= $_Theme_['Main']['Staff']['grade' . $staff . ''] ?></strong></p>
+                        </div>
+
+                <?php
+                    $staff++;
+                    endwhile;
+                ?>
+            </div>
+        </div>
+
+    </section>
+<?php }?>
+
 
 
 

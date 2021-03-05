@@ -3,7 +3,7 @@ require_once "theme/Flat/header.php";
 ?>
 
 <section id="Shop">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 mb-3">
                 <!-- Catégories -->

@@ -48,12 +48,24 @@ Main:
         discord-widget-l: "250"
         style-news: "1"
         launcher-mode: 'on'
-        launcher-image: >
-            https://images.sky-dream.fr/upload-img-gfx/launcher.png
+        launcher-image: https://images.sky-dream.fr/upload-img-gfx/launcher.png
         launcher-description: |
             Ceci est une description pour un launcher Minecraft, elle est vraiment longue car mon serveur est super et j'ai pleins de choses à dire.
             J'ai très bon goût car j'utilise le thème Flat !
-        launcher-liens:
+        launcher-liens: ""
+        table-mode: dark
+    Staff:
+        staff-mode: 'on'
+        staff-style: helm
+        staff-nombre: "4"
+        pseudo1: Teyir
+        grade1: Fondateur
+        pseudo2: TeteElFiaso
+        grade2: Modo
+        pseudo3: skytraceX
+        grade3: Bras-droit
+        pseudo4: Aypierre
+        grade4: ????
 Pied:
     couleurbg: '#383838'
     couleurtxt: '#d2cbcb'

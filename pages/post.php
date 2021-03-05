@@ -17,7 +17,7 @@ if (isset($_GET['id'])) :
                     <div class="row">
 
                         <nav aria-label="breadcrumb" role="navigation" class="w-100">
-                            <ol class="breadcrumb bg-lightest">
+                            <ol class="breadcrumb bg-<?= $_Theme_['Main']['theme']['table-mode'] ?>">
 
                                 <li class="breadcrumb-item">
                                     <a href="/">
@@ -53,7 +53,7 @@ if (isset($_GET['id'])) :
                         </nav>
 
                         <div class="col my-3 pr-auto">
-                            <div class="card">
+                            <div class="card bg-<?= $_Theme_['Main']['theme']['table-mode'] ?>">
 
                                 <div class="card-header text-center">
                                     <h5 class='m-0'>Actions</h5>
@@ -100,7 +100,7 @@ if (isset($_GET['id'])) :
 
                             <div class="col-md-6 col-lg-4 col-sm-12 my-3 ml-auto">
 
-                                <div class="card">
+                                <div class="card bg-<?= $_Theme_['Main']['theme']['table-mode'] ?>">
 
                                     <div class="card-header text-center">
                                         <h5 class='m-0'>Modération</h5>
@@ -186,7 +186,7 @@ if (isset($_GET['id'])) :
 
                     <h3>Sujet : <?= $topicd['nom']; ?></h3>
 
-                    <div class="row">
+                    <div class="row bg-<?= $_Theme_['Main']['theme']['table-mode'] ?>">
                         <div class="col-lg-3 col-md-12 col-sm-12 m-3 border-1">
 
                             <div class="col-12 text-center">
@@ -252,7 +252,7 @@ if (isset($_GET['id'])) :
                         </div>
 
                         <!-- Contenue du topic de l'auteur -->
-                        <div class="col-lg-8 col-md-12 col-sm-12 mt-3 p-4 bg-lightest rounded ml-auto">
+                        <div class="col-lg-8 col-md-12 col-sm-12 mt-3 p-4 bg-<?= $_Theme_['Main']['theme']['table-mode'] ?> rounded ml-auto">
 
                             <?php
                             unset($contenue);
@@ -396,9 +396,9 @@ if (isset($_GET['id'])) :
 
 
 
-                        <div class="row">
+                        <div class="row bg-<?= $_Theme_['Main']['theme']['table-mode'] ?>" style="margin-top: 25px">
 
-                            <div class="col-lg-3 col-md-12 col-sm-12 m-3 border-1">
+                            <div class="col-lg-3 col-md-12 col-sm-12 m-3 border-1 ">
 
                                 <div class="col-12 text-center">
                                     <img class="mx-auto p-3 bg-lightest" src="<?= $_ImgProfil_->getUrlHeadByPseudo($answerd[$i]['pseudo'], 192); ?>" style="width: 192px; height: 192px;" alt="avatar de <?= $answerd[$i]['pseudo']; ?>" title="<?= $answerd[$i]['pseudo']; ?>" />

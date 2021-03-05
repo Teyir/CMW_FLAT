@@ -76,6 +76,10 @@ $flateversion_locale = $_Theme_['version'];
                                     <a class="nav-link" id="launcherEdition-tab" data-toggle="tab" href="#launcherEdition" role="tab" aria-controls="launcherEdition" aria-selected="false">Launcher</a>
                                 </li>
 
+                                <li class="nav-item">
+                                    <a class="nav-link" id="staffEdition-tab" data-toggle="tab" href="#staffEdition" role="tab" aria-controls="staffEdition" aria-selected="false">Staff</a>
+                                </li>
+
 
                             </ul>
 
@@ -358,12 +362,24 @@ $flateversion_locale = $_Theme_['version'];
 
 
                                             <option value="1">1</option>
-
-
                                             <option value="2">2</option>
-
                                             <option value="3">3</option>
 
+                                        </select>
+
+                                        <label class="control-label" for="table-mode">Style des tables (pages: forum, banlist et membres) </label>
+                                        <select class="form-control text-center" name="table-mode">
+                                            <option value="<?= $_Theme_['Main']['theme']['table-mode'] ?>" selected ><?= $_Theme_['Main']['theme']['table-mode'] ?></option>
+
+
+                                            <option value="dark">dark</option>
+                                            <option value="primary">thème</option>
+                                            <option value="info">info</option>
+                                            <option value="active">active</option>
+                                            <option value="success">success</option>
+                                            <option value="warning">warning</option>
+                                            <option value="danger">danger</option>
+                                            <option value="transparent">transparent</option>
 
                                         </select>
 
@@ -649,6 +665,66 @@ $flateversion_locale = $_Theme_['version'];
                                         <label class="control-label" for="launcher-description">Description du Launcher </label>
                                         <textarea class="form-control" name="launcher-description" id="launcher-description"><?= $_Theme_['Main']['theme']['launcher-description'] ?></textarea>
 
+                                    </div>
+                                </div>
+
+
+
+                                <div class="tab-pane fade mx-auto" id="staffEdition" role="tabpanel" aria-labelledby="staffEdition-tab">
+
+                                    <div class="col-11 mx-auto my-2">
+
+                                        <h4>Staff :</h4>
+
+
+
+                                        <div class="custom-control custom-switch" style="margin-top: 20px">
+                                            <input type="checkbox" class="custom-control-input" id="staff-mode" name="staff-mode" <?php if ($_Theme_['Main']['Staff']['staff-mode'] == null){} else{echo "checked";} ?>>
+                                            <label class="custom-control-label" for="staff-mode">Activer ou non la section staff </label><br>
+                                        </div>
+
+
+                                        <label class="control-label" for="staff-style">Style des staff à afficher </label>
+                                        <select class="form-control text-center" name="staff-style">
+                                            <option value="<?= $_Theme_['Main']['Staff']['staff-style'] ?>" selected >
+                                                <?php
+                                                if ($_Theme_['Main']['Staff']['staff-style'] == "helm"){echo "Tête 2d";}
+                                                    elseif ($_Theme_['Main']['Staff']['staff-style'] == "cube") {echo "Tête 3d";}
+                                                    elseif ($_Theme_['Main']['Staff']['staff-style'] == "body") {echo "Corps";}
+                                                    elseif ($_Theme_['Main']['Staff']['staff-style'] == "bust") {echo "Buste";}
+                                                ?>
+                                            </option>
+
+                                            <option value="helm">Tête 2d</option>
+                                            <option value="cube">Tête 3d</option>
+                                            <option value="body">Corps</option>
+                                            <option value="bust">Bust</option>
+
+                                        </select>
+
+                                        <label class="control-label" for="staff-nombre">Nombre de staffs à afficher </label>
+                                        <input class="form-control" type="number" name="staff-nombre" id="staff-nombre" value="<?= $_Theme_['Main']['Staff']['staff-nombre'] ?>" placeholder="Entrer le nombre de staffs à afficher">
+
+                                        <?php
+                                        $staffnumber = $_Theme_['Main']['Staff']['staff-nombre'];
+                                        if ($staffnumber == null){
+                                            $staffnumber = 0;
+                                        }
+                                        for ($numStaff = 1; $numStaff < $staffnumber + 1; $numStaff++) : ?>
+
+                                        <div class="form-row">
+
+                                            <div class="col">
+                                                <label class="control-label" for="staff-pseudo<?= $numStaff ?>">Pseudo Minecraft</label>
+                                                <input class="form-control" type="text" name="staff-pseudo<?= $numStaff ?>" value="<?php echo $_Theme_['Main']['Staff']['pseudo' . $numStaff]; ?>">
+                                            </div>
+                                            <div class="col">
+                                                <label class="control-label" for="staff-grade<?= $numStaff ?>">Grade</label>
+                                                <input type="text" class="form-control" name="staff-grade<?= $numStaff ?>" value="<?php echo $_Theme_['Main']['Staff']['grade' . $numStaff]; ?>">
+                                            </div>
+
+                                        </div>
+                                        <?php endfor; ?>
 
 
 

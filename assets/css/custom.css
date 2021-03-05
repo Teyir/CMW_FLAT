@@ -444,6 +444,10 @@ progress {
     margin-bottom: 40px;
 }
 
+#Errors{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
 
 ::-webkit-scrollbar {
     width: 8px;

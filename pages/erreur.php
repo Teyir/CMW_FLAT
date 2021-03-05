@@ -18,9 +18,10 @@ require_once "theme/Flat/header.php";
                         </h6>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body text-center">
                         <p class="card-text">
                             <?= $contenue; ?>
+                            <img src="theme/Flat/assets/img/error.gif" style="margin-top: 25px">
                         </p>
                     </div>
 

@@ -46,7 +46,7 @@ if(isset($id_sous_forum))
         <div class="row mt-4">
 
             <nav aria-label="breadcrumb" role="navigation" class='w-100'>
-                <ol class="breadcrumb bg-lightest">
+                <ol class="breadcrumb bg-<?= $_Theme_['Main']['theme']['table-mode'] ?>">
 
                     <li class="breadcrumb-item ml-4"><a href="/">Accueil</a></li>
 
@@ -75,7 +75,7 @@ if(isset($id_sous_forum))
 
                 <h3>Les sous-Catégories de <?= $categoried['nom']; ?></h3>
 
-                <table class="table table-light table-striped">
+                <table class="table table-<?= $_Theme_['Main']['theme']['table-mode'] ?> table-striped">
                     <thead>
                     <tr>
 
@@ -262,7 +262,7 @@ if(isset($id_sous_forum))
 
             if ($count_topic_max2 > 0) : ?>
 
-                <table class="table table-dark table-striped">
+                <table class="table table-<?= $_Theme_['Main']['theme']['table-mode'] ?> table-striped">
 
                     <thead>
                     <tr>
@@ -468,7 +468,7 @@ if(isset($id_sous_forum))
         <div class="row">
             <?php if (Permission::getInstance()->verifPerm("connect") && ((($categoried['close'] == 0 and $sousforumd['close'] == 0) or Permission::getInstance()->verifPerm('PermsForum', 'general', 'seeForumHide')) and !$_SESSION['mode'])) : ?>
 
-                <div class="card col-8 mx-auto">
+                <div class="card col-8 mx-auto bg-<?= $_Theme_['Main']['theme']['table-mode'] ?>">
                     <form action="?&action=create_topic" method="post">
 
                         <div class="card-header">
