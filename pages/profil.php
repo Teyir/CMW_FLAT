@@ -1,103 +1,8 @@
 <?php
 require_once "theme/Flat/header.php";
-$getprofil = $_GET['profil'];
-$isMyAccount = false;
-$nbrAccount = 0;
-
-// GESTION D'ERREURS
-if (isset($_GET['erreur'])) {
-    $errorContent = '';
-    switch ($_GET['erreur']) {
-        case 1:
-            $errorContent = 'Erreur, l\'email entré est vide...';
-            break;
-
-        case 2:
-            $errorContent = 'Erreur, un des champs est trop court (minimum 4 caractères)';
-            break;
-
-        case 3:
-            $errorContent = 'Erreur, le mot de passe entré ne correspond pas à celui associé à votre compte';
-            break;
-
-        case 4:
-            $errorContent = 'Erreur, Vous n\'avez pas assez de tokens.';
-            break;
-
-        case 5:
-            $errorContent = 'Erreur, Pseudonyme inconnu...';
-            break;
-
-        case 6:
-            $errorContent = 'Erreur, Extension non autorisée !';
-            break;
-
-        case 7:
-            $errorContent = 'Erreur, Fichier trop volumineux ! <small>Maximum 2Mo</small>';
-            break;
-
-        case 8:
-            $errorContent = 'Erreur, Des champs sont manquants !';
-            break;
-
-        case 9:
-            $errorContent = 'Erreur, Impossible de vous abonner / désabonner à votre Newsletter...';
-
-        case 10:
-            $errorContent = 'Erreur, Impossible d\'afficher / cacher votre email...';
-
-        default:
-            $errorContent = 'Une erreur est survenue lors de l\'enregistrement de vos informations !';
-            break;
-    }
-    //GESTION DE SUCCÈS
-} elseif (isset($_GET['success'])) {
-    $successContent = '';
-    switch ($_GET['success']) {
-        case 'true':
-            $successContent = 'Vos informations ont bien été changé !';
-            break;
-
-        case 'jetons':
-            if (!isset($_GET['montant']) || !is_numeric($_GET['montant'])) {
-                $_GET['montant'] = 'NaN';
-            }
-            if (!isset($_GET['pseudo'])) {
-                $_GET['pseudo'] = 'NOT_FOUND';
-            }
-            $successContent = 'Vous venez d\'envoyer ' . htmlspecialchars($_GET['montant']) . ' '.$_Serveur_['General']['moneyName'].' à ' . htmlspecialchars($_GET['pseudo']) . ' !';
-            break;
-
-        case 'image':
-            $successContent = 'Votre photo de profil a été modifiée !';
-            break;
-
-        case 'imageRemoved':
-            $successContent = 'Votre photo de profil a bien été supprimée de nos serveurs !';
-            break;
-
-        default:
-            $successContent = '<div class="text-danger">Message de succès introuvable...</div>';
-    }
-}
-?>
-
-
-
-<!-- Gestion skin du joueur -->
-<?php
-
-//Conversion du pseudo → UUID
-$UUID = file_get_contents('http://api.serveurs-minecraft.com/api_uuid?Pseudo_Vers_UUID&ID='.htmlspecialchars($joueurDonnees['pseudo']));
-
-//CONVERSION UUID
-$UUID = substr_replace($UUID, "-", 11, 0);
-$UUID = substr_replace($UUID, "-", 16, 0);
-$UUID = substr_replace($UUID, "-", 21, 0);
-$UUID = substr_replace($UUID, "-", 26, 0);
 
 //Création du skin
-$skinwaitclean = "https://crafatar.com/renders/body/".$UUID;
+$skinwaitclean = "https://crafatar.com/renders/body/" . $_Joueur_['uuid'] . "?scale=10&default=MHF_Steve&overlay";
 
 //Nettoyage du liens
 $skin = preg_replace(
@@ -107,460 +12,347 @@ $skin = preg_replace(
     "", $skinwaitclean
 
 );
-
 ?>
 
-
-
-
-
 <section id="Profil">
-    <div class="container-fluid col-md-9 col-lg-9 col-sm-10">
-
-        <?php if (isset($_Joueur_["pseudo"]) && $_Joueur_['pseudo'] != $_GET['profil']) :
-            $isMyAccount = false; ?>
-        <?php endif; ?>
-
-        <?php if (isset($_Joueur_) and $_GET['profil'] === $_Joueur_['pseudo']) :
-            $isMyAccount = true ?>
-        <?php endif; ?>
-        <div class="row">
-
-
-            <?php if ($isMyAccount) : ?>
-                <div class="col-md-12 col-lg-3 col-sm-12 mb-3">
-                    <!-- Informations du profile -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Informations</h4>
+    <div class="container-fluid col-12 col-sm-12 col-md-8 col-lg-7 col-xl-6">
+        <div class="row"
+             id="profilspec" <?= $_Profil_->isOwner() & isset($_GET['status']) ? 'style="display:none;"' : '' ?>>
+            <div class="col-12 col-sm-7">
+                <div class="card" style="margin-top:30px">
+                    <div class="card-header text-center" style="background-color: transparent; margin-bottom: 15px">
+                        <h3><?= $_Profil_->getPlayer()['pseudo'] ?></h3>
+                        <h6><?= Permission::getInstance()->gradeJoueur($_Profil_->getPlayer()['pseudo']); ?></h6>
+                    </div>
+                    <div class="row no-gutters" style="margin-bottom: 15px; margin-left: 15px">
+                        <div class="col-md-3 profil-card-left">
+                            <img src="<?php echo $skin ?>" class="card-img profile-skin3d"
+                                 alt="Skin de <?= $_Joueur_['pseudo'] ?>">
                         </div>
-                        <div class="card-body categories">
+                        <div class="col-md-8 profil-card-right">
+                            <h6><?= $_Profil_->isOnline() ? "Actuellement connecté sur le serveur Minecraft." : "Actuellement déconnecté du serveur Minecraft." ?></h6>
+                            <h6>Inscrit le : <?= date('d/m/Y', $_Profil_->getPlayer()['anciennete']) ?></h6>
+                            <h6>Nombre de votes : <?= $_Profil_->getPlayer()['votes'] ?></h6>
+                            <h6>Messages sur le forum : <?= $_Profil_->getPlayer()['forum'] ?></h6>
+                            <?php if (!empty($_Profil_->getReseau())) {
+                                foreach ($_Profil_->getReseau() as $key => $value) {
+                                    echo '<h6>' . $key . ' : ' . $value . '</h6>';
+                                }
+                            }
+                            if ($_Profil_->getPlayer()['age'] > 0) {
+                                echo '<h6>Age : ' . $_Profil_->getPlayer()['age'] . '</h6>';
+                            }
+                            if ($_Profil_->getPlayer()['show_email'] == 1) {
+                                echo '<h6>Email : ' . $_Profil_->getPlayer()['email'] . '</h6>';
+                            }
 
-                            <div class="row no-gutters">
-                                <div class="col-md-4">
-                                    <img src="<?php echo $skin?>" class="card-img profile-skin3d" alt="Skin de <?= $joueurDonnees['pseudo'] ?>" style="margin-left: 7px;">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <p class="card-title"><?= $gradeSite ?> <?= htmlspecialchars($joueurDonnees['pseudo']); ?></p><br>
-                                        <h5 class="card-title">Inscrit le :</h5>
-                                        <p class="card-text"><?= date('d/m/Y', $joueurDonnees['anciennete']); ?></p>
-                                        <h5 class="card-title">Votes :</h5>
-                                        <p class="card-text">
-                                            <?php require_once("modele/topVotes.class.php");
-                                            $topVotes = new TopVotes($bddConnection);
-                                            $nbreVotes = $topVotes->getNbreVotes($getprofil); ?>
-                                            <?= $nbreVotes . ' ' . ($nbreVotes > 1 ? "votes" : "vote"); ?>
-                                        </p>
-
-                                        <h5 class="card-title"><?php echo $_Serveur_['General']['moneyName']; ?></h5>
-                                        <p class="card-text">
-                                            <?php if (isset($_Joueur_['tokens'])) echo $_Joueur_['tokens']; ?> <i class="fas fa-coins"></i>
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-
+                            ?>
                         </div>
                     </div>
                 </div>
-            <?php else : ?>
-
-            <?php endif; ?>
-            <?php if ($isMyAccount) : ?>
-                <div class="col-md-12 col-lg-6 col-sm-12 mb-5">
-                    <!-- Modification du compte -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Modifier mon compte</h4>
-                            <div class="card-body">
-                                <div class="tab-content">
-
-                                    <div class="row">
-
-                                        <div class="col-md-12 col-lg-3 col-sm-12 mb-3 ml-lg-3">
-                                            <!-- Navigation -->
-                                            <div class="categories">
-                                                <ul class="categorie-content nav nav-tabs">
-                                                    <li class="categorie-item nav-item">
-                                                        <a href="#editPersonal" class="nav-link categorie-link active"
-                                                           data-toggle="tab" aria-controls="editPersonal" aria-selected="true">
-                                                            Informations personnelles
-                                                        </a>
-                                                    </li>
-
-                                                    <li class="categorie-item nav-item">
-                                                        <a href="#editOptionnal" class="nav-link categorie-link" data-toggle="tab"
-                                                           aria-controls="editOptionnal" aria-selected="false">
-                                                            Informations optionnelles
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-md-12 col-lg-8 col-sm-12 mb-3 ml-lg-3">
-                                            <!-- Contenu -->
-                                            <div class="tab-content">
-
-                                                <div id="editPersonal" class="tab-pane fade show active" role="tabpanel"
-                                                     aria-labelledby="editPersonal">
-
-                                                    <form class="form-horizontal" method="post" action="?&action=changeProfil"
-                                                          role="form">
-
-                                                        <div class="form-row py-1">
-
-                                                            <div class="col-md-12 py-2">
-                                                                <label for="namePseudo"> Pseudo </label>
-                                                                <div class="input-group">
-                                                        <span class="input-group-prepend">
-                                                            <div class="input-group-text bg-main border-0">
-                                                                <i class="fa fa-user"></i>
-                                                            </div>
-                                                        </span>
-                                                                    <input type="text" name="pseudo"
-                                                                           class="form-control custom-text-input" id="namePseudo"
-                                                                           value="<?= $joueurDonnees['pseudo']; ?>" disabled
-                                                                           style="cursor: not-allowed">
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-
-                                                        <h5 class="mt-4 mb-0">Modifier votre mot de passe : <small>(Laisser vide
-                                                                pour ne pas modifier)</small></h5>
-                                                        <hr class="bg-main w-80 float-left my-1">
-                                                        <div class="clearfix"></div>
-
-                                                        <div class="form-row py-2">
-
-                                                            <div class="col-md-12 mb-2">
-                                                                <label for="mdpAncien"> Mot de passe Actuel </label>
-                                                                <div class="input-group">
-                                                        <span class="input-group-prepend">
-                                                            <div class="input-group-text bg-main border-0">
-                                                                <i class="fas fa-key"></i>
-                                                            </div>
-                                                        </span>
-
-                                                        <input type="password" name="mdp" class="form-control custom-text-input" id="MdpConnectionForm" placeholder="Entrez votre mot de passe">
-                                                              <div class="input-group-append">
-                                                                   <span toggle="#MdpConnectionForm" class="fa fa-fw fa-eye field-icon toggle-password "></span>
-                                                              </div>
-
-                                                                </div>
-                                                            </div>
-
-
-
-                                                            <div class="col-md-12 mb-2">
-                                                                <label for="mdpNouveau"> Nouveau mot de passe </label>
-                                                                <div class="input-group">
-                                                        <span class="input-group-prepend">
-                                                            <div class="input-group-text bg-main border-0">
-                                                                <i class="fas fa-key"></i>
-                                                            </div>
-                                                        </span>
-                                                                    <input type="password" name="mdpNouveau" class="form-control custom-text-input" id="MdpNouveau" placeholder="Entrez votre nouveau mot de passe">
-                                                                    <div class="input-group-append">
-                                                                        <span toggle="#MdpNouveau" class="fa fa-fw fa-eye field-icon toggle-password "></span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-
-
-                                                            <div class="col-md-12 mb-2">
-                                                                <label for="mdpConfirme"> Confirmation Mot de passe </label>
-                                                                <div class="input-group">
-                                                        <span class="input-group-prepend">
-                                                            <div class="input-group-text bg-main border-0">
-                                                                <i class="fas fa-key"></i>
-                                                            </div>
-                                                        </span>
-                                                                    <input type="password" name="mdpConfirme" class="form-control custom-text-input" id="MdpConfirme" placeholder="Confirmez votre nouveau mot de passe">
-                                                                    <div class="input-group-append">
-                                                                        <span toggle="#MdpConfirme" class="fa fa-fw fa-eye field-icon toggle-password "></span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-
-                                                        </div>
-
-                                                        <h5 class="mt-4 mb-0">Modifier votre mail : <small>(Laisser vide pour ne
-                                                                pas modifier)</small></h5>
-                                                        <hr class="bg-main w-80 float-left my-1">
-                                                        <div class="clearfix"></div>
-
-                                                        <div class="form-row py-2">
-
-                                                            <div class="col-md-8">
-                                                                <label for="inputMail"> Email </label>
-                                                                <div class="input-group">
-                                                        <span class="input-group-prepend">
-                                                            <div class="input-group-text bg-main border-0">
-                                                                <i class="fa fa-user"></i>
-                                                            </div>
-                                                        </span>
-                                                                    <input type="email" name="email"
-                                                                           class="form-control custom-text-input" id="inputMail"
-                                                                           placeholder="Entrez votre mail"
-                                                                           value="<?= $joueurDonnees['email']; ?>">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div class="form-row py-2">
-                                                            <div class="col-md-8">
-                                                                <label for="inputNewsletter"> Abonnement à la Newsletter </label>
-                                                                <div class="input-group">
-                                                        <span class="input-group-prepend">
-                                                            <div class="input-group-text bg-main border-0">
-                                                                <i class="fas fa-plus-square"></i>
-                                                            </div>
-                                                        </span>
-
-                                                                    <?php if ($joueurDonnees['newsletter']) : ?>
-                                                                        <input type="text"
-                                                                               class="form-control custom-text-input text-success"
-                                                                               id="inputNewsletter" name="inputNewsletter"
-                                                                               value="Déjà abonné !" disabled />
-                                                                    <?php else : ?>
-                                                                        <input type="text"
-                                                                               class="form-control custom-text-input text-danger"
-                                                                               id="inputNewsletter" name="inputNewsletter"
-                                                                               value="Non abonné !" disabled />
-                                                                    <?php endif; ?>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-md-4">
-                                                                <?php if ($joueurDonnees['newsletter']) : ?>
-                                                                    <button type='submit'
-                                                                            class="btn btn-reverse form-control text-danger"
-                                                                            name="changeNewsletter" value="unsubscribeNewsletter"
-                                                                            style="margin-top: 1.9rem">Se désinscrire
-                                                                    </button>
-
-                                                                <?php else : ?>
-
-                                                                    <button type='submit' class="btn btn-reverse form-control"
-                                                                            name="changeNewsletter" value="subscribeNewsletter"
-                                                                            style="margin-top: 1.9rem">S'inscrire
-                                                                    </button>
-
-                                                                <?php endif; ?>
-                                                            </div>
-
-                                                            <div class="row w-100">
-                                                                <div class="col-12 mt-4">
-                                                                    <button type="submit"
-                                                                            class="btn btn-main validerChange bg-lightest w-100 form-control">
-                                                                        Valider mes changements
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </form>
-                                                </div>
-
-                                                <div id="editOptionnal" class="tab-pane fade" role="tabpanel"
-                                                     aria-labelledby="editOptionnal">
-                                                    <form class="form-horizontal" method="post" action="?&action=changeProfilAutres"
-                                                          role="form">
-
-                                                        <?php foreach ($listeReseaux as $value) : ?>
-
-                                                            <div class="form-row py-1">
-                                                                <label for="<?= $value['nom']; ?>">
-                                                                    <?= ucfirst($value['nom']); ?>
-                                                                </label>
-                                                                <input type="text" class="form-control custom-text-input"
-                                                                       name="<?= $value['nom']; ?>"
-                                                                       placeholder="Votre nom d'utilisateur <?= $value['nom']; ?>"
-                                                                       value="<?php if ($joueurDonnees[$value['nom']] !== 'inconnu') echo $joueurDonnees[$value['nom']]; ?>">
-                                                            </div>
-
-                                                        <?php endforeach; ?>
-
-                                                        <div class="form-row">
-                                                            <label for="age">
-                                                                Âge <small>(0 =
-                                                                    caché)</small>
-                                                            </label>
-                                                            <input type="number" name="age" class="form-control custom-text-input "
-                                                                   min="0" max="99" placeholder="17"
-                                                                   value="<?php if ($joueurDonnees['age'] !== 'inconnu') echo $joueurDonnees['age']; ?>">
-
-                                                        </div>
-
-
-                                                        <div class="form-row wys-content">
-                                                            <h5 class="mt-4 mb-0">Signature</h5>
-                                                            <hr class="bg-main w-80 float-left my-1">
-                                                            <div class="clearfix"></div>
-
-                                                            <div class="col-md-12 text-center wys-options">
-                                                                <textarea  data-UUID="0005" id="ckeditor" name="signature" style="height: 275px; margin: 0px; width: 100%;"><?= $joueurDonnees['signature'] ?></textarea>
-
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row w-100">
-                                                            <div class="col-12 mt-4">
-                                                                <button type="submit"
-                                                                        class="btn btn-main validerChange bg-lightest w-100 form-control">
-                                                                    Valider mes changements
-                                                                </button>
-                                                            </div>
-                                                        </div>
-
-                                                    </form>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            <?php else : ?>
-                <div class="col-md-12 col-lg-6 col-sm-12 mb-5 ">
-
-                    <!-- Informations du profile vu par les autres joueurs-->
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Informations</h4>
-                        </div>
-                        <div class="card-body categories">
-
-                            <div class="row no-gutters">
-                                <div class="col-md-4">
-                                    <img src="<?php echo $skin?>" class="card-img profile-skin3d" alt="Skin de <?= $joueurDonnees['pseudo'] ?>" style="margin-left: 7px;">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <p class="card-title"><?= $gradeSite ?> <?= htmlspecialchars($joueurDonnees['pseudo']); ?></p><br>
-                                        <h5 class="card-title">Inscrit le :</h5>
-                                        <p class="card-text"><?= date('d/m/Y', $joueurDonnees['anciennete']); ?></p>
-                                        <h5 class="card-title">Votes :</h5>
-                                        <p class="card-text">
-                                            <?php require_once("modele/topVotes.class.php");
-                                            $topVotes = new TopVotes($bddConnection);
-                                            $nbreVotes = $topVotes->getNbreVotes($getprofil); ?>
-                                            <?= $nbreVotes . ' ' . ($nbreVotes > 1 ? "votes" : "vote"); ?>
-                                        </p>
-                                        <?php if ($isMyAccount) : ?>
-                                            <h5 class="card-title"><?php echo $_Serveur_['General']['moneyName']; ?></h5>
-                                            <p class="card-text">
-                                                <?php if (isset($_Joueur_['tokens'])) echo $_Joueur_['tokens']; ?> <i class="fas fa-coins"></i>
-                                            </p>
-                                        <?php else : ?>
-
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-
-                </div>
-            <?php endif; ?>
-
-
-
-            <?php if ($isMyAccount) : ?>
-            <div class="col-md-12 col-lg-3 col-sm-12 mb-5">
-
-                <form method="post" action="?action=modifImgProfil" role="form" enctype="multipart/form-data">
-
-
-                            <div class="card">
-                                <div class="card-container text-center">
-                                    <div class="card-header">
-                                        <h4>Image de profil</h4>
-                                    </div>
-
-                                    <img class="profile-image"
-                                         src="<?= $_ImgProfil_->getUrlHeadByPseudo($_Joueur_['pseudo'], 128); ?>"
-                                         alt="Image de profil de <?= htmlspecialchars($joueurDonnees['pseudo']) ?>" />
-
-                                    <label for="img_profil">
-                                        <input type="file" class="form-control-file d-none" name="img_profil" id="img_profil"
-                                               onchange='getUploadFileName(this)' required />
-                                        <span class="btn btn-sm btn-primary btn-profil-choose"> <i class="fas fa-edit"></i> Choisir une image </span>
-                                    </label>
-
-
-                                <div class="card-footer">
-                                        <div class="alert alert-main p-1 w-80"><span> Image Choisie : </span>
-                                            <span id="file-name">Aucune image sélectionnée !</span></div>
-
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-upload"></i> Envoyer</button>
-                                        <a class="btn btn-sm btn-danger" href="?action=removeImgProfil"><i class="fa fa-trash-alt"></i> Supprimer</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                </form>
             </div>
-
-
-                <?php else : ?>
-
-                <?php endif; ?>
+            <div class="col-12 col-sm-5">
+                <?php if ($_Profil_->isOwner()) { ?>
+                    <button class="btn btn-primary w-100"
+                            onclick="$('#profilspec').hide(500);$('#editProfil').show(500);" style="margin-top:30px;">
+                        Modifier mon profil
+                    </button>
+                <?php } ?>
             </div>
         </div>
+        <?php if ($_Profil_->isOwner()) : ?>
+            <div style="margin-top:30px;<?= isset($_GET['status']) ? '' : 'display:none;' ?>" id="editProfil">
+                <div class="card">
+                    <div class="card-header" style="cursor:pointer;" onclick="unCollapseAll(this);"
+                         data-toggle="collapse" data-target="#editage" aria-expanded="true">
+                        <div style="margin:15px;vertical-align: middle;">
+                            <h6 class="mb-0">
+                                Editer votre âge
+                            </h6>
+                        </div>
+                    </div>
 
+                    <div id="editage" class="collapse">
+                        <div class="card-body">
+                            <form method="post" action="?action=editAge" role="form">
+                                <label class="control-label">Votre âge (Mettre 0 pour cacher):</label>
+                                <input type="number" class="form-control" value="<?= $_Profil_->getPlayer()['age'] ?>"
+                                       name="age" placeholder="17" required>
 
-
-
-
-
-    </div>
-
-    <div class="col-10 text-center mx-auto">
-        <h4 class="my-5 text-left">Signature : </h4>
-        <?php if (!empty($joueurDonnees['signature'])) : ?>
-
-            <div class="blockquote-wrapper">
-                <div class="blockquote">
-                    <h1>
-                        <?= $joueurDonnees['signature'] ?>
-                    </h1>
-
+                                <button type="submit" style="margin-top:30px;" class="btn btn-success w-100">Envoyer!
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="card">
+                    <div class="card-header" style="cursor:pointer;" onclick="unCollapseAll(this);"
+                         data-toggle="collapse" data-target="#editimg" aria-expanded="true">
+                        <div style="margin:15px;vertical-align: middle;">
+                            <h6 class="mb-0">
+                                Editer votre image de profil
+                            </h6>
+                        </div>
+                    </div>
 
-        <?php else : ?>
-            <div class="blockquote-wrapper">
-                <div class="blockquote">
-                    <h1>
-                        Ce joueur ne possède pas de signature...
-                    </h1>
+                    <div id="editimg" class="collapse">
+                        <div class="card-body">
+                            <form method="post" action="?action=editImgProfil" role="form"
+                                  enctype="multipart/form-data">
+                                <label class="control-label">Votre image de profil (la précédente sera écrasé):</label>
+                                <div class="input-group file-input-group" style="margin-top:10px;">
+                                    <input class="form-control" id="file-text" type="text"
+                                           placeholder="Aucun fichier sélectionné" readonly>
+                                    <input type="file" name="img_profil" id="File" style="display:none;" required>
+                                    <div class="input-group-append">
+                                        <label class="btn btn-secondary mb-0" for="File">Choisir un fichier</label>
+                                    </div>
+                                </div>
+                                <script>
+                                    const fileInput = document.getElementById('File');
+                                    const label = document.getElementById('file-text');
 
+                                    fileInput.onchange =
+                                        fileInput.onmouseout = function () {
+                                            if (!fileInput.value) return
+
+                                            var value = fileInput.value.replace(/^.*[\\\/]/, '')
+                                            label.value = value
+                                        }
+                                </script>
+
+                                <button type="submit" style="margin-top:30px;" class="btn btn-success w-100">Envoyer!
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="card">
+                    <div class="card-header" style="cursor:pointer;" onclick="unCollapseAll(this);"
+                         data-toggle="collapse" data-target="#editmail" aria-expanded="true">
+                        <div style="margin:15px;vertical-align: middle;">
+                            <h6 class="mb-0">
+                                Editer votre Email
+                            </h6>
+                        </div>
+                    </div>
+
+                    <div id="editmail" class="collapse">
+                        <div class="card-body">
+                            <form method="post" action="?action=editMail" role="form">
+                                <label class="control-label">Votre Email:</label>
+                                <input type="text" class="form-control" value="<?= $_Profil_->getPlayer()['email'] ?>"
+                                       name="email" placeholder="exemple@gmail.com" required>
+
+                                <label class="control-label">Votre mot de passe:</label>
+                                <input type="password" class="form-control" name="mdp" required>
+                                <button type="submit" style="margin-top:30px;" class="btn btn-success w-100">Envoyer!
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" style="cursor:pointer;" onclick="unCollapseAll(this);"
+                         data-toggle="collapse" data-target="#editmailvisi" aria-expanded="true">
+                        <div style="margin:15px;vertical-align: middle;">
+                            <h6 class="mb-0">
+                                Editer la visibilité de votre Email
+                            </h6>
+                        </div>
+                    </div>
+
+                    <div id="editmailvisi" class="collapse">
+                        <div class="card-body">
+                            <form method="post" action="?action=editMailVisibility" role="form">
+                                <div class="form-check">
+                                    <input <?= $_Profil_->getPlayer()['show_email'] == 1 ? 'checked' : '' ?>
+                                            class="form-check-input" name="visibility" value="true" type="checkbox"
+                                            id="hidemail">
+                                    <label class="form-check-label" for="hidemail">
+                                        Afficher votre email sur votre page de profil
+                                    </label>
+                                </div>
+
+                                <button type="submit" style="margin-top:30px;" class="btn btn-success w-100">Envoyer!
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" style="cursor:pointer;" onclick="unCollapseAll(this);"
+                         data-toggle="collapse" data-target="#editmdp" aria-expanded="true">
+                        <div style="margin:15px;vertical-align: middle;">
+                            <h6 class="mb-0">
+                                Editer votre mot de passe
+                            </h6>
+                        </div>
+                    </div>
+
+                    <div id="editmdp" class="collapse">
+                        <div class="card-body">
+                            <form method="post" action="?action=editMdp" role="form">
+                                <label class="control-label">Ancien mot de passe:</label>
+                                <input type="password" class="form-control" name="mdpAncien" required>
+
+                                <label class="control-label" style="margin-top:30px;">Nouveau mot de passe:</label>
+                                <input type="password" class="form-control" name="mdpNouveau" required>
+
+                                <label class="control-label">Confirmer le mot de passe:</label>
+                                <input type="password" class="form-control" name="mdpConfirme" required>
+
+                                <button type="submit" style="margin-top:30px;" class="btn btn-success w-100">Envoyer!
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" style="cursor:pointer;" onclick="unCollapseAll(this);"
+                         data-toggle="collapse" data-target="#editnews" aria-expanded="true">
+                        <div style="margin:15px;vertical-align: middle;">
+                            <h6 class="mb-0">
+                                Editer votre abonnement à la newsletter
+                            </h6>
+                        </div>
+                    </div>
+
+                    <div id="editnews" class="collapse">
+                        <div class="card-body">
+                            <form method="post" action="?action=editNewsletter" role="form">
+                                <div class="form-check">
+                                    <input <?= $_Profil_->getPlayer()['newsletter'] == 1 ? 'checked' : '' ?>
+                                            class="form-check-input" name="newsletter" value="true" type="checkbox"
+                                            id="hidenews">
+                                    <label class="form-check-label" for="hidenews">
+                                        S'abonner à la newsletter
+                                    </label>
+                                </div>
+
+                                <button type="submit" style="margin-top:30px;" class="btn btn-success w-100">Envoyer!
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" style="cursor:pointer;" onclick="unCollapseAll(this);"
+                         data-toggle="collapse" data-target="#editres" aria-expanded="true">
+                        <div style="margin:15px;vertical-align: middle;">
+                            <h6 class="mb-0">
+                                Editer vos réseaux sociaux
+                            </h6>
+                        </div>
+                    </div>
+
+                    <div id="editres" class="collapse">
+                        <div class="card-body">
+                            <form method="post" action="?action=editReseau" role="form">
+                                <?php if (!empty($_Profil_->getReseau())) {
+                                    foreach ($_Profil_->getReseau() as $key => $value) { ?>
+
+                                        <label class="control-label">Votre compte <?= $key ?>:</label>
+                                        <input type="text" <?= isset($value) & $value != "?" ? 'value="' . $value . '"' : '' ?>
+                                               class="form-control" name="<?= $key ?>">
+                                    <?php }
+                                } ?>
+
+                                <button type="submit" style="margin-top:30px;" class="btn btn-success w-100">Envoyer!
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" style="cursor:pointer;" onclick="unCollapseAll(this);"
+                         data-toggle="collapse" data-target="#editsign" aria-expanded="true">
+                        <div style="margin:15px;vertical-align: middle;">
+                            <h6 class="mb-0">
+                                Editer votre signature
+                            </h6>
+                        </div>
+                    </div>
+
+                    <div id="editsign" class="collapse">
+                        <div class="card-body">
+                            <form method="post" action="?action=editSignature" role="form">
+                                <label class="control-label">Votre signature (afficher après vos messages sur le forum
+                                    et sur votre profil):</label>
+                                <textarea data-UUID="1003" name="signature"
+                                          style="height: 750px; margin: 0px; width: 100%;"><?= $_Profil_->getPlayer()['signature'] ?></textarea>
+
+                                <button type="submit" style="margin-top:30px;" class="btn btn-success w-100">Envoyer!
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" style="cursor:pointer;" onclick="unCollapseAll(this);"
+                         data-toggle="collapse" data-target="#editjeton" aria-expanded="true">
+                        <div style="margin:15px;vertical-align: middle;">
+                            <h6 class="mb-0">
+                                Donner des <?= $_Serveur_['General']['moneyName']; ?>
+                            </h6>
+                        </div>
+                    </div>
+
+                    <div id="editjeton" class="collapse">
+                        <div class="card-body">
+                            <form method="post" action="?action=give_jetons" role="form">
+                                <label class="control-label">Pseudo du destinataire:</label>
+                                <input type="text" placeholder="Pseudo du receveur" class="form-control" name="pseudo"
+                                       required>
+
+                                <label class="control-label">Montant à donner:</label>
+                                <input type="number" min="0" max="999999999999999999999" class="form-control"
+                                       name="montant" required>
+
+                                <button type="submit" style="margin-top:30px;" class="btn btn-success w-100">Envoyer!
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary w-100" onclick="$('#profilspec').show(500);$('#editProfil').hide(500);"
+                        style="margin-top:30px;">Retourner sur mon profil
+                </button>
+
+
             </div>
         <?php endif; ?>
-    </div>
 
+        <div class="col-10 text-center mx-auto">
+            <h4 class="my-5 text-left">Signature : </h4>
+            <?php if (isset($_Profil_->getPlayer()['signature']) & !empty($_Profil_->getPlayer()['signature'])) : ?>
+
+                <div class="blockquote-wrapper">
+                    <div class="blockquote">
+                        <h1>
+                            <?= $_Profil_->getPlayer()['signature'] ?>
+                        </h1>
+
+                    </div>
+                </div>
+
+            <?php else : ?>
+                <div class="blockquote-wrapper">
+                    <div class="blockquote">
+                        <h1>
+                            Ce joueur ne possède pas de signature...
+                        </h1>
+
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
     </div>
 </section>

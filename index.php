@@ -8,6 +8,8 @@ $_Theme_ = $configTheme->GetTableau();
 <html lang="fr">
 <head>
 
+    <base href="<?= urlRewrite::getSiteUrl() ?>" />
+
     <style>
 
         :root {
@@ -60,7 +62,7 @@ $_Theme_ = $configTheme->GetTableau();
 
 
     <title>
-        <?= $_Serveur_['General']['name'] . " | " . (isset($_GET["page"]) ? $_GET["page"] : $_Serveur_['General']['description']) ?>
+        <?= $_Serveur_['General']['name'] . " | " . (isset($_GET["page"]) ? ucfirst($_GET["page"]) : $_Serveur_['General']['description']) ?>
     </title>
 
 
@@ -96,6 +98,17 @@ $_Theme_ = $configTheme->GetTableau();
     <meta name="copyright" content="CraftMyWebsite, Teyir, <?= $_Serveur_['General']['name']; ?>"/>
 
     <meta name="robots" content="follow, index, all">
+
+    <!-- Google Service -->
+    <?php
+    if(googleService::isAdsenseEnable($_Serveur_)) {
+        googleService::getAdsense()->writeHead();
+    }
+    if(googleService::isAnalyticsEnable($_Serveur_)) {
+        googleService::getAnalytics()->writeHead();
+    }
+
+    ?>
 
     <!-- FONTS -->
 
@@ -142,7 +155,7 @@ if ($versioncms != $versioncmsrelease && Permission::getInstance()->verifPerm('P
 
 <?php endif; ?>
 
-<?php if (Permission::getInstance()->verifPerm("connect")) /* --> */ setcookie('pseudo', $_Joueur_['pseudo'], time() + 86400, null, null, false, true);
+<?php
 
 include('theme/' . $_Serveur_['General']['theme'] . '/entete.php'); //Header included
 tempMess(); ?>

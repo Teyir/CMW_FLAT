@@ -3897,3 +3897,16 @@ h6 {
     color: var(--active-color);
     font-weight: bolder;
 }
+
+.profil-card-right{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.profil-card-left{
+    margin-right: 20px;
+}
+
+.profile-skin3d{
+
+}
